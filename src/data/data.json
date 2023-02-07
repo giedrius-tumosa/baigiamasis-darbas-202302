@@ -2,10 +2,10 @@
   "users": [
     {
       "id": "",
-      "name": "",
-      "profileImgUrl": "",
-      "email": "",
-      "password": ""
+      "userName": "",
+      "userProfileImgUrl": "",
+      "userEmail": "",
+      "userPassword": ""
     }
   ],
   "questions": [
