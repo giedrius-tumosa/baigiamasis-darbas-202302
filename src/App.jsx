@@ -1,16 +1,18 @@
+import { useEffect, useContext } from "react";
 import "./styles/App.scss";
-import FormLogin from "./components/forms/FormLogin";
+import UserContext from "./store/UserContext";
 import FormRegister from "./components/forms/FormRegister";
-import FormNewQuestion from "./components/forms/FormNewQuestion";
-import FormNewAnswer from "./components/forms/FormNewAnswer";
 
 function App() {
+  const { getUsers } = useContext(UserContext);
+
+  useEffect(() => {
+    getUsers();
+  }, []);
+
   return (
     <>
-      <FormLogin />
       <FormRegister />
-      <FormNewQuestion />
-      <FormNewAnswer />
     </>
   );
 }

@@ -1,24 +1,127 @@
-import { Formik, Form, Field } from "formik";
+import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
-import { useState } from "react";
+import { nanoid } from "nanoid";
+import { useState, useContext, useEffect } from "react";
+import UserContext from "../../store/UserContext";
 
 const FormRegister = () => {
-  const [values, setValues] = useState();
+  // States
+  const [formError, setFormError] = useState("");
+  const [userExists, setUserExists] = useState(false);
 
-  const validationSchema = Yup.object().shape({});
+  // Context
+  const { users, postUser } = useContext(UserContext);
+
+  // Functions
+  const validationSchema = Yup.object().shape({
+    userName: Yup.string()
+      .min(2, "User name must be at least 2 characters long.")
+      .max(16, "User name must not exceed 15 characters.")
+      .required("Required field."),
+    userProfileImgUrl: Yup.string().url("Not URL format.").required("Required field."),
+    userEmail: Yup.string().email("Not email format.").required("Required field."),
+    userPassword: Yup.string()
+      .min(8, "Password must be at least 8 characters long.")
+      .max(16, "Password must not exceed 16 characters.")
+      .required("No password provided."),
+    userPasswordRepeat: Yup.string()
+      .oneOf([Yup.ref("userPassword"), null], "Original and repeated passwords do not match.")
+      .required("Required field."),
+  });
 
   return (
     <>
       <div className="formRegisterWrapper">
         <h2>Register:</h2>
         <Formik
-          initialValues={values}
+          initialValues={{
+            id: "",
+            userName: "",
+            userProfileImgUrl: "",
+            userEmail: "",
+            userPassword: "",
+            userPasswordRepeat: "",
+          }}
           validationSchema={validationSchema}
-          onSubmit={(values) => {
-            console.log("FormRegister", values);
+          onSubmit={(values, { resetForm, setSubmitting, setFieldValue }) => {
+            const editInputs = (inputs) => {
+              delete inputs.userPasswordRepeat;
+              return { id: nanoid(), ...inputs };
+            };
+            const newUser = editInputs(values);
+            setFormError("");
+            if (
+              !users.some(
+                (user) => user.userEmail === values.userEmail || user.userName === values.userName
+              )
+            ) {
+              setUserExists(false);
+              postUser(newUser);
+              resetForm();
+            } else {
+              setUserExists(true);
+              setFormError("Such user already exists. Change email and/or name and try again.");
+              resetForm();
+              setFieldValue("userName", values.userName);
+              setFieldValue("userProfileImgUrl", values.userProfileImgUrl);
+              setFieldValue("userEmail", values.userEmail);
+            }
+            setSubmitting(false);
           }}
         >
-          {({ errors, touched }) => <Form></Form>}
+          {({ isSubmitting }) => (
+            <Form>
+              <div className="userNameWrap">
+                <label htmlFor="userName">User name:</label>
+                <Field name="userName" />
+                <ErrorMessage name="userName">
+                  {(message) => <div className="formErrorMessage">{message}</div>}
+                </ErrorMessage>
+              </div>
+
+              <div className="userProfileImgUrlWrap">
+                <label htmlFor="userProfileImgUrl">Profile image link:</label>
+                <Field name="userProfileImgUrl" />
+                <ErrorMessage name="userProfileImgUrl">
+                  {(message) => <div className="formErrorMessage">{message}</div>}
+                </ErrorMessage>
+              </div>
+
+              <div className="userEmailWrap">
+                <label htmlFor="userEmail">Email:</label>
+                <Field name="userEmail" />
+                <ErrorMessage name="userEmail">
+                  {(message) => <div className="formErrorMessage">{message}</div>}
+                </ErrorMessage>
+              </div>
+
+              <div className="userPasswordWrap">
+                <label htmlFor="userPassword">Password:</label>
+                <Field name="userPassword" type="password" />
+                <ErrorMessage name="userPassword">
+                  {(message) => <div className="formErrorMessage">{message}</div>}
+                </ErrorMessage>
+              </div>
+
+              <div className="userPasswordRepeatWrap">
+                <label htmlFor="userPasswordRepeat">Repeat password:</label>
+                <Field name="userPasswordRepeat" type="password" />
+                <ErrorMessage name="userPasswordRepeat">
+                  {(message) => <div className="formErrorMessage">{message}</div>}
+                </ErrorMessage>
+              </div>
+              <div className="buttonSubmitWrap">
+                <button type="submit" disabled={isSubmitting}>
+                  Register
+                </button>
+              </div>
+              {userExists && (
+                <div className="formErrorMessage">
+                  <p>{formError}</p>
+                </div>
+              )}
+            </Form>
+          )}
         </Formik>
       </div>
     </>

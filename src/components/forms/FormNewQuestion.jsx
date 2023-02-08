@@ -1,26 +1,70 @@
-import { Formik, Form, Field } from "formik";
+import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
-import { useState } from "react";
+import { nanoid } from "nanoid";
 
 const FormNewQuestion = () => {
-  const [values, setValues] = useState();
-
-  const validationSchema = Yup.object().shape({});
-
-  const handleSubmit = (e) => {};
+  const validationSchema = Yup.object().shape({
+    title: Yup.string()
+      .min(2, "Title must be at least 2 characters long.")
+      .max(30, "Title must not exceed 30 characters.")
+      .required("Required field."),
+    description: Yup.string() //TODO: padidinti min iki 20 chars
+      .min(5, "Description must be at least 5 characters long.")
+      .max(500, "Description must not exceed 500 characters.")
+      .required("Required field."),
+  });
 
   return (
     <>
       <div className="formNewQuestionWrapper">
-        <h2>Post new question:</h2>
+        <h2>Post your question:</h2>
         <Formik
-          initialValues={values}
+          initialValues={{
+            title: "",
+            description: "",
+          }}
           validationSchema={validationSchema}
-          onSubmit={(values) => {
-            console.log("FormNewQuestion", values);
+          onSubmit={(values, { resetForm }) => {
+            const newQuestion = (inputs) => {
+              return {
+                id: nanoid(),
+                ownerId: "", //TODO: current user id idet
+                likedBy: [],
+                dislikedBy: [],
+                isEdited: false,
+                editTimeStamp: "",
+                postTimeStamp: new Date().toLocaleString("lt-LT"),
+                ...inputs,
+              };
+            };
+            console.log("FormNewQuestion", newQuestion(values));
+            resetForm({
+              title: "",
+              description: "",
+            });
           }}
         >
-          {({ errors, touched }) => <Form></Form>}
+          {() => (
+            <Form>
+              <div className="titleWrap">
+                <label htmlFor="title">Title:</label>
+                <Field name="title" id="title" />
+                <ErrorMessage name="title">
+                  {(message) => <div className="formErrorMessage">{message}</div>}
+                </ErrorMessage>
+              </div>
+              <div className="descriptionWrap">
+                <label htmlFor="description">Description:</label>
+                <Field name="description" id="description" as="textarea" />
+                <ErrorMessage name="description">
+                  {(message) => <div className="formErrorMessage">{message}</div>}
+                </ErrorMessage>
+              </div>
+              <div className="buttonSubmitWrap">
+                <button type="submit">Post</button>
+              </div>
+            </Form>
+          )}
         </Formik>
       </div>
     </>

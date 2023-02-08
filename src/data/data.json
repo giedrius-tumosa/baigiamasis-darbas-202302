@@ -1,37 +1,51 @@
 {
   "users": [
     {
-      "id": "",
+      "id": "xxdsaa",
       "userName": "",
       "userProfileImgUrl": "",
       "userEmail": "",
       "userPassword": ""
+    },
+    {
+      "id": "O--aFz4IpGs9abNnLUDmW",
+      "userName": "Giedrius",
+      "userProfileImgUrl": "https://www.google.com/",
+      "userEmail": "g.tumosa@gmail.com",
+      "userPassword": "labas2020"
+    },
+    {
+      "id": "_RNFGVNnp8rDjtprPf8rX",
+      "userName": "Jonas",
+      "userProfileImgUrl": "https://www.google.com/",
+      "userEmail": "jonas@gmail.com",
+      "userPassword": "labas2020"
     }
   ],
   "questions": [
     {
       "id": "",
-      "title": "",
-      "description": "",
       "ownerId": "",
       "likedBy": [],
       "dislikedBy": [],
       "isEdited": "",
       "editTimeStamp": "",
-      "postTimeStamp": ""
+      "postTimeStamp": "",
+      "title": "",
+      "description": ""
     }
   ],
   "answers": [
     {
       "id": "",
-      "description": "",
       "ownerId": "",
       "questionId": "",
       "likedBy": [],
       "dislikedBy": [],
       "isEdited": "",
       "editTimeStamp": "",
-      "postTimeStamp": ""
+      "postTimeStamp": "",
+      "description": ""
     }
   ]
 }

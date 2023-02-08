@@ -2,7 +2,7 @@
 @use "variables" as v;
 
 // EXTERNAL IMPORTS
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;700;900&display=swap");
 
 // Global styles
 
@@ -23,6 +23,8 @@ button {
   h2 {
     margin-bottom: 0.5rem;
   }
+  padding-left: 1rem;
+  font-family: "Roboto", sans-serif;
 }
 
 //TODO: temporary delete END

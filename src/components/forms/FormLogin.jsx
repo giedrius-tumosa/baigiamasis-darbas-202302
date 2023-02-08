@@ -24,8 +24,9 @@ const FormLogin = () => {
               userPassword: "",
             });
           }}
+          // TODO: verify if user exists in database
         >
-          {({ errors, touched }) => (
+          {() => (
             <Form>
               <div className="userNameWrapper">
                 <label htmlFor="userName">User name: </label>
@@ -34,14 +35,16 @@ const FormLogin = () => {
                   {(message) => <div className="formErrorMessage">{message}</div>}
                 </ErrorMessage>
               </div>
+
               <div className="userPasswordWrapper">
                 <label htmlFor="userPassword">Password: </label>
-                <Field name="userPassword" id="userPassword" />
+                <Field name="userPassword" id="userPassword" type="password" />
                 <ErrorMessage name="userPassword">
                   {(message) => <div className="formErrorMessage">{message}</div>}
                 </ErrorMessage>
               </div>
-              <div className="buttonSubmit">
+
+              <div className="buttonSubmitWrap">
                 <button type="submit">Login</button>
               </div>
             </Form>
