@@ -9,7 +9,14 @@ const UserProvider = ({ children }) => {
   // States
   const [users, setUsers] = useState([]);
   const [userLoggedin, setUserLoggedin] = useState(false);
-  const [currentUser, setCurrentUser] = useState({});
+  const [currentUser, setCurrentUser] = useState({
+    id: "_RNFGVNnp8rDjtprPf8rX",
+    userName: "Jonas",
+    userProfileImgUrl:
+      "https://images.unsplash.com/photo-1463453091185-61582044d556?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8cHJvZmlsZSUyMHBpY3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60",
+    userEmail: "jonas@gmail.com",
+    userPassword: "labas2020",
+  });
   const [userFetchErrors, setUserFetchErrors] = useState({
     getErr: "",
     postErr: ""

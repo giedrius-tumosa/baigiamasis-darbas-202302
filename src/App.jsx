@@ -1,10 +1,10 @@
 import { useEffect, useContext } from "react";
 import "./styles/App.scss";
 import UserContext from "./store/UserContext";
-import FormRegister from "./components/forms/FormRegister";
+import QuestionFull from "./components/questions/QuestionFull";
 
 function App() {
-  const { getUsers } = useContext(UserContext);
+  const { getUsers, setCurrentUser } = useContext(UserContext);
 
   useEffect(() => {
     getUsers();
@@ -12,7 +12,7 @@ function App() {
 
   return (
     <>
-      <FormRegister />
+      <QuestionFull />
     </>
   );
 }

@@ -1,12 +1,18 @@
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
+import { useState, useContext } from "react";
+import UserContext from "../../store/UserContext";
 
 const FormLogin = () => {
+  const [loginError, setLoginError] = useState("");
+  const { users, setCurrentUser, userLoggedin, setUserLoggedin, currentUser } =
+    useContext(UserContext);
+
   const validationSchema = Yup.object().shape({
     userName: Yup.string().required("Required field."),
     userPassword: Yup.string().required("Required field."),
   });
-
+  // TODO: ar reikia issubmitting
   return (
     <>
       <div className="formLoginWrapper">
@@ -18,13 +24,21 @@ const FormLogin = () => {
           }}
           validationSchema={validationSchema}
           onSubmit={(values, { resetForm }) => {
-            console.log("FormLogin", values);
-            resetForm({
-              userName: "",
-              userPassword: "",
-            });
+            const userData = users.find(
+              (user) =>
+                user.userName === values.userName && user.userPassword === values.userPassword
+            );
+            if (userData) {
+              setLoginError("");
+              setCurrentUser(userData);
+              setUserLoggedin(true);
+            }
+            if (!userData) {
+              setUserLoggedin(false);
+              setLoginError("Incorrect user name or password.");
+            }
+            resetForm();
           }}
-          // TODO: verify if user exists in database
         >
           {() => (
             <Form>
@@ -46,6 +60,9 @@ const FormLogin = () => {
 
               <div className="buttonSubmitWrap">
                 <button type="submit">Login</button>
+              </div>
+              <div className="formErrorMessage">
+                <p>{loginError}</p>
               </div>
             </Form>
           )}

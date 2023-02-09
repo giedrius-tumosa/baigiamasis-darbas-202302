@@ -1,38 +1,31 @@
 {
   "users": [
     {
-      "id": "xxdsaa",
-      "userName": "",
-      "userProfileImgUrl": "",
-      "userEmail": "",
-      "userPassword": ""
-    },
-    {
       "id": "O--aFz4IpGs9abNnLUDmW",
       "userName": "Giedrius",
-      "userProfileImgUrl": "https://www.google.com/",
+      "userProfileImgUrl": "https://images.unsplash.com/photo-1577880216142-8549e9488dad?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTJ8fHByb2ZpbGUlMjBwaWN8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60",
       "userEmail": "g.tumosa@gmail.com",
       "userPassword": "labas2020"
     },
     {
       "id": "_RNFGVNnp8rDjtprPf8rX",
       "userName": "Jonas",
-      "userProfileImgUrl": "https://www.google.com/",
+      "userProfileImgUrl": "https://images.unsplash.com/photo-1463453091185-61582044d556?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8cHJvZmlsZSUyMHBpY3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60",
       "userEmail": "jonas@gmail.com",
       "userPassword": "labas2020"
     }
   ],
   "questions": [
     {
-      "id": "",
-      "ownerId": "",
+      "id": "9KoOkzM9Oza07NoOgH6jd",
+      "ownerId": "_RNFGVNnp8rDjtprPf8rX",
       "likedBy": [],
       "dislikedBy": [],
-      "isEdited": "",
-      "editTimeStamp": "",
-      "postTimeStamp": "",
-      "title": "",
-      "description": ""
+      "isEdited": false,
+      "editTimeStamp": "2023-02-10 00:49:21",
+      "postTimeStamp": "2023-02-08 14:49:21",
+      "title": "Bobby Kotick warns UK risks ‘becoming Death Valley’ if it blocks Microsoft deal",
+      "description": "Activision Blizzard CEO Bobby Kotick has claimed that blocking Microsoft’s acquisition of the Call of Duty publisher would represent a major blow to the UK government’s ambition of becoming a technology superpower."
     }
   ],
   "answers": [

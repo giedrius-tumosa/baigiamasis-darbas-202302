@@ -1,15 +1,18 @@
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import { nanoid } from "nanoid";
+import QuestionContext from "../../store/QuestionContext";
+import { useContext } from "react";
 
 const FormNewQuestion = () => {
+  const { postQuestion } = useContext(QuestionContext);
   const validationSchema = Yup.object().shape({
     title: Yup.string()
       .min(2, "Title must be at least 2 characters long.")
-      .max(30, "Title must not exceed 30 characters.")
+      .max(100, "Title must not exceed 30 characters.")
       .required("Required field."),
     description: Yup.string() //TODO: padidinti min iki 20 chars
-      .min(5, "Description must be at least 5 characters long.")
+      .min(20, "Description must be at least 5 characters long.")
       .max(500, "Description must not exceed 500 characters.")
       .required("Required field."),
   });
@@ -37,11 +40,9 @@ const FormNewQuestion = () => {
                 ...inputs,
               };
             };
-            console.log("FormNewQuestion", newQuestion(values));
-            resetForm({
-              title: "",
-              description: "",
-            });
+            postQuestion(newQuestion(values));
+            console.log(newQuestion(values));
+            resetForm();
           }}
         >
           {() => (

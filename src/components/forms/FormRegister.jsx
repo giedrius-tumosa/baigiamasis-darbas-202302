@@ -1,7 +1,7 @@
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import { nanoid } from "nanoid";
-import { useState, useContext, useEffect } from "react";
+import { useState, useContext } from "react";
 import UserContext from "../../store/UserContext";
 
 const FormRegister = () => {
@@ -115,11 +115,9 @@ const FormRegister = () => {
                   Register
                 </button>
               </div>
-              {userExists && (
-                <div className="formErrorMessage">
-                  <p>{formError}</p>
-                </div>
-              )}
+              <div className="formErrorMessage">
+                <p>{formError}</p>
+              </div>
             </Form>
           )}
         </Formik>
