@@ -1,10 +1,13 @@
 import { useEffect, useContext } from "react";
 import "./styles/App.scss";
 import UserContext from "./store/UserContext";
-import QuestionFull from "./components/questions/QuestionFull";
+import { Routes, Route } from "react-router-dom";
+import HomeUser from "./components/pages/HomeUser";
+import NotFound from "./components/pages/NotFound";
+import QuestionPage from "./components/pages/QuestionPage";
 
 function App() {
-  const { getUsers, setCurrentUser } = useContext(UserContext);
+  const { getUsers } = useContext(UserContext);
 
   useEffect(() => {
     getUsers();
@@ -12,7 +15,11 @@ function App() {
 
   return (
     <>
-      <QuestionFull />
+      <Routes>
+        <Route path="/" element={<HomeUser />} />
+        <Route path="/questions/:questionId" element={<QuestionPage />} />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
     </>
   );
 }

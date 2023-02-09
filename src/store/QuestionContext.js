@@ -15,8 +15,11 @@ const QuestionProvider = ({ children }) => {
   const [questionFetchErrors, setQuestionFetchErrors] = useState({
     getErr: "",
     postErr: "",
-    patchErr: ""
+    patchErr: "",
+    deleteErr: ""
   });
+  const [editMode, setEditMode] = useState(false);
+  const [deleteMode, setDeleteMode] = useState(false);
 
 
   // Error library
@@ -24,7 +27,8 @@ const QuestionProvider = ({ children }) => {
   const errorLib = {
     getErr: "Error: could not retreive question data from server.",
     postErr: "Error: could not post new question data to server.",
-    patchErr: "Error: could send updates to the server."
+    patchErr: "Error: could send updates to the server.",
+    deleteErr: "Error: could not delete post from server."
   };
 
   // Functions
@@ -70,13 +74,27 @@ const QuestionProvider = ({ children }) => {
     }
   };
 
+  const deleteQuestion = async (questionId) => {
+    try {
+      const updatedQuestions = questions.filter(quest => quest.id !== questionId);
+      setQuestions(updatedQuestions);
+      deleteData(ENDPOINT_QUESTIONS, questionId, errorLib.deleteErr);
+      setQuestionFetchErrors({ ...questionFetchErrors, deleteErr: "" });
+    } catch (error) {
+      setQuestionFetchErrors({ ...questionFetchErrors, deleteErr: error.message });
+      setQuestions(questions);
+    }
+  };
+
   return (
     <QuestionContext.Provider value={{
       questions, setQuestions,
       loadingQuestions, setLoadingQuestions,
       questionFetchErrors, setQuestionFetchErrors,
       getQuestions, postQuestion,
-      updateQuestion
+      updateQuestion, editMode,
+      setEditMode, deleteQuestion,
+      deleteMode, setDeleteMode
     }}>
       {children}
     </QuestionContext.Provider>

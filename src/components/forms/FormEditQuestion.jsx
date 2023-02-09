@@ -1,11 +1,10 @@
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
-import { nanoid } from "nanoid";
 import QuestionContext from "../../store/QuestionContext";
 import { useContext } from "react";
 
-const FormNewQuestion = () => {
-  const { postQuestion } = useContext(QuestionContext);
+const FormNewQuestion = ({ question }) => {
+  const { updateQuestion, setEditMode } = useContext(QuestionContext);
   const validationSchema = Yup.object().shape({
     title: Yup.string()
       .min(2, "Title must be at least 2 characters long.")
@@ -17,30 +16,31 @@ const FormNewQuestion = () => {
       .required("Required field."),
   });
 
+  const handleCancel = () => {
+    setEditMode(false);
+  };
+
   return (
     <>
-      <div className="formNewQuestionWrapper">
-        <h2>Post your question:</h2>
+      <div className="formEditQuestionWrapper">
+        <h2>Edit your question:</h2>
         <Formik
           initialValues={{
-            title: "",
-            description: "",
+            title: question.title,
+            description: question.description,
           }}
           validationSchema={validationSchema}
           onSubmit={(values, { resetForm }) => {
-            const newQuestion = (inputs) => {
+            const modifyQuestion = (inputs) => {
               return {
-                id: nanoid(),
-                ownerId: "", //TODO: current user id idet
-                likedBy: [],
-                dislikedBy: [],
-                isEdited: false,
-                editTimeStamp: "",
-                postTimeStamp: new Date().toLocaleString("lt-LT"),
+                ...question,
+                editTimeStamp: new Date().toLocaleString("lt-LT"),
                 ...inputs,
               };
             };
-            postQuestion(newQuestion(values));
+            const newQuestion = modifyQuestion(values);
+            updateQuestion(newQuestion); //TODO: check if works locally in states
+            setEditMode(false);
             resetForm();
           }}
         >
@@ -61,7 +61,12 @@ const FormNewQuestion = () => {
                 </ErrorMessage>
               </div>
               <div className="buttonSubmitWrap">
-                <button type="submit">Post</button>
+                <button type="submit">Save</button>
+              </div>
+              <div className="buttonCanceltWrap">
+                <button type="button" onClick={handleCancel}>
+                  Cancel
+                </button>
               </div>
             </Form>
           )}

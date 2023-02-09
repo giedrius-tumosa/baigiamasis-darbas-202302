@@ -15,30 +15,6 @@
       "userPassword": "labas2020"
     }
   ],
-  "questions": [
-    {
-      "id": "9KoOkzM9Oza07NoOgH6jd",
-      "ownerId": "_RNFGVNnp8rDjtprPf8rX",
-      "likedBy": [],
-      "dislikedBy": [],
-      "isEdited": false,
-      "editTimeStamp": "2023-02-10 00:49:21",
-      "postTimeStamp": "2023-02-08 14:49:21",
-      "title": "Bobby Kotick warns UK risks ‘becoming Death Valley’ if it blocks Microsoft deal",
-      "description": "Activision Blizzard CEO Bobby Kotick has claimed that blocking Microsoft’s acquisition of the Call of Duty publisher would represent a major blow to the UK government’s ambition of becoming a technology superpower."
-    }
-  ],
-  "answers": [
-    {
-      "id": "",
-      "ownerId": "",
-      "questionId": "",
-      "likedBy": [],
-      "dislikedBy": [],
-      "isEdited": "",
-      "editTimeStamp": "",
-      "postTimeStamp": "",
-      "description": ""
-    }
-  ]
+  "questions": [],
+  "answers": []
 }

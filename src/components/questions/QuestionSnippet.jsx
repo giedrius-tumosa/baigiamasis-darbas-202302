@@ -1,7 +1,10 @@
 import OwnerInfo from "./questionComponents/OwnerInfo";
 import QuestionStatistics from "./questionComponents/QuestionStatistics";
 import TimeStamp from "./questionComponents/TimeStamp";
+import { Link } from "react-router-dom";
+
 // TODO: what if you dont get data for each item?
+
 const QuestionSnippet = ({ question }) => {
   return (
     <article
@@ -24,7 +27,9 @@ const QuestionSnippet = ({ question }) => {
       </header>
       <main className="question-snip__main">
         <div className="questionContentWrap">
-          <h3>{question.title}</h3>
+          <Link to={`/questions/${question.id}`}>
+            <h3>{question.title}</h3>
+          </Link>
           <p>{`${question.description.slice(0, 100)}...`}</p>
         </div>
       </main>
