@@ -3,8 +3,11 @@ import * as Yup from "yup";
 import { nanoid } from "nanoid";
 import QuestionContext from "../../store/QuestionContext";
 import { useContext } from "react";
+import UserContext from "../../store/UserContext";
 
 const FormNewQuestion = () => {
+  const { currentUser } = useContext(UserContext);
+
   const { postQuestion } = useContext(QuestionContext);
   const validationSchema = Yup.object().shape({
     title: Yup.string()
@@ -31,7 +34,7 @@ const FormNewQuestion = () => {
             const newQuestion = (inputs) => {
               return {
                 id: nanoid(),
-                ownerId: "", //TODO: current user id idet
+                ownerId: currentUser.id,
                 likedBy: [],
                 dislikedBy: [],
                 isEdited: false,

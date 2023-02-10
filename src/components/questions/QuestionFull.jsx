@@ -1,10 +1,10 @@
-import OwnerInfo from "./questionComponents/OwnerInfo";
+import PostOwnerInfo from "./questionComponents/PostOwnerInfo";
 import QuestionStatistics from "./questionComponents/QuestionStatistics";
 import TimeStamp from "./questionComponents/TimeStamp";
-import EditDeleteButtons from "./questionComponents/EditDeleteButtons";
+import QuestionEditDeleteButtons from "./questionComponents/QuestionEditDeleteButtons";
 import QuestionContext from "../../store/QuestionContext";
 import { useContext } from "react";
-import FormNewQuestion from "../forms/FormEditQuestion";
+import FormEditQuestion from "../forms/FormEditQuestion";
 // TODO: what if you dont get data for each item?
 
 const QuestionFull = ({ question }) => {
@@ -26,7 +26,7 @@ const QuestionFull = ({ question }) => {
         className="question-snip__header"
         style={{ display: "flex", justifyContent: "space-between" }}
       >
-        <OwnerInfo ownerId={question.ownerId} />
+        <PostOwnerInfo ownerId={question.ownerId} />
         <TimeStamp postTimeStamp={question.postTimeStamp} editTimeStamp={question.editTimeStamp} />
       </header>
       <main className="question-snip__main">
@@ -40,9 +40,9 @@ const QuestionFull = ({ question }) => {
         style={{ display: "flex", justifyContent: "space-between" }}
       >
         <QuestionStatistics question={question} />
-        <EditDeleteButtons question={question} />
+        <QuestionEditDeleteButtons question={question} />
       </footer>
-      {editMode && <FormNewQuestion question={question} />}
+      {editMode && <FormEditQuestion question={question} />}
     </article>
   );
 };

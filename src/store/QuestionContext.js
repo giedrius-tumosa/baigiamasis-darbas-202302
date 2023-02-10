@@ -27,7 +27,7 @@ const QuestionProvider = ({ children }) => {
   const errorLib = {
     getErr: "Error: could not retreive question data from server.",
     postErr: "Error: could not post new question data to server.",
-    patchErr: "Error: could send updates to the server.",
+    patchErr: "Error: could not send updates to the server.",
     deleteErr: "Error: could not delete post from server."
   };
 

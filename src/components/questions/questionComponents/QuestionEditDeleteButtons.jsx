@@ -3,7 +3,7 @@ import UserContext from "../../../store/UserContext";
 import QuestionContext from "../../../store/QuestionContext";
 import { useNavigate } from "react-router-dom";
 
-const EditDeleteButtons = ({ question }) => {
+const QuestionEditDeleteButtons = ({ question }) => {
   const { editMode, setEditMode, deleteQuestion, setDeleteMode } = useContext(QuestionContext);
   const { currentUser } = useContext(UserContext);
   const navigate = useNavigate();
@@ -35,4 +35,4 @@ const EditDeleteButtons = ({ question }) => {
   );
 };
 
-export default EditDeleteButtons;
+export default QuestionEditDeleteButtons;

@@ -1,16 +1,11 @@
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import { nanoid } from "nanoid";
-import { useParams } from "react-router-dom";
 import AnswerContext from "../../store/AnswerContext";
 import { useContext } from "react";
-import UserContext from "../../store/UserContext";
 
-const FormNewAnswer = () => {
-  const { currentUser } = useContext(UserContext);
-
-  const { postAnswer } = useContext(AnswerContext);
-  const { questionId } = useParams();
+const FormEditAnswer = ({ answer, editMode, setEditMode }) => {
+  const { updateAnswer } = useContext(AnswerContext);
 
   const validationSchema = Yup.object().shape({
     description: Yup.string()
@@ -19,32 +14,31 @@ const FormNewAnswer = () => {
       .required("Required field."),
   });
 
+  const handleCancel = () => {
+    setEditMode(false);
+  };
+
   return (
     <>
-      <div className="formNewAnswerWrapper">
-        <h2>Post your answer:</h2>
+      <div className="formEditAnswerWrapper">
+        <h2>Edit your answer:</h2>
         <Formik
           initialValues={{
-            description: "",
+            description: answer.description,
           }}
           validationSchema={validationSchema}
           onSubmit={(values, { resetForm }) => {
-            const newAnswer = (inputs) => {
+            const modifyAnswer = (inputs) => {
               return {
-                id: nanoid(),
-                ownerId: currentUser.id,
-                questionId: questionId,
-                likedBy: [],
-                dislikedBy: [],
-                editTimeStamp: "",
-                postTimeStamp: new Date().toLocaleString("lt-LT"),
+                ...answer,
+                editTimeStamp: new Date().toLocaleString("lt-LT"),
                 ...inputs,
               };
             };
-            postAnswer(newAnswer(values));
-            resetForm({
-              description: "",
-            });
+            const newAnswer = modifyAnswer(values);
+            updateAnswer(newAnswer);
+            setEditMode(false);
+            resetForm();
           }}
         >
           {() => (
@@ -58,7 +52,12 @@ const FormNewAnswer = () => {
               </div>
               {/* TODO: pameginti isSubmitting, kai true - disable submit button */}
               <div className="buttonSubmitWrap">
-                <button type="submit">Post</button>
+                <button type="submit">Save</button>
+              </div>
+              <div className="buttonCanceltWrap">
+                <button type="button" onClick={handleCancel}>
+                  Cancel
+                </button>
               </div>
             </Form>
           )}
@@ -68,4 +67,4 @@ const FormNewAnswer = () => {
   );
 };
 
-export default FormNewAnswer;
+export default FormEditAnswer;

@@ -15,6 +15,70 @@
       "userPassword": "labas2020"
     }
   ],
-  "questions": [],
-  "answers": []
+  "questions": [
+    {
+      "id": "9KoOkzM9Oza07NoOgH6jd",
+      "ownerId": "_RNFGVNnp8rDjtprPf8rX",
+      "likedBy": [],
+      "dislikedBy": [
+        "_RNFGVNnp8rDjtprPf8r"
+      ],
+      "isEdited": false,
+      "editTimeStamp": "2023-02-10 10:10:17",
+      "postTimeStamp": "2023-02-08 14:49:21",
+      "title": "Bobby",
+      "description": "Activision Blizzard CEO Bobby Kotick has claimed that blocking Microsoft’s acquisition of the Call of Duty publisher would represent a major blow to the UK government’s ambition of becoming a technology superpower."
+    },
+    {
+      "id": "9KoOkzM9qqqqqqoOgH6jd",
+      "ownerId": "O--aFz4IpGs9abNnLUDmW",
+      "likedBy": [
+        "_RNFGVNnp8rDjtprPf8r"
+      ],
+      "dislikedBy": [],
+      "isEdited": false,
+      "editTimeStamp": "2023-02-10 00:49:21",
+      "postTimeStamp": "2023-02-08 14:49:21",
+      "title": "Žinia statantiems individualius namus: apribojamos galimybės tai daryti patiems",
+      "description": "Šių metų pavasarį įsigalios Statybų įstatymo pakeitimai, kurie turės įtakos individualių namų statytojams. Kaip teigia Aplinkos ministerija, pokyčiai turėtų sudėti taškus ant „i“: reglamentuota, kokiais atvejais individualų namą galima statyti savo jėgomis (ūkio būdu), o kada būtina samdyti kvalifikuotus ekspertus. Naujo reglamentavimo tikslas – užtikrinti statybos kokybę, procesų skaidrumą, statybos dalyvių kvalifikaciją, atsakomybę."
+    }
+  ],
+  "answers": [
+    {
+      "id": "545ddkdj",
+      "questionId": "9KoOkzM9Oza07NoOgH6jd",
+      "ownerId": "O--aFz4IpGs9abNnLUDmW",
+      "likedBy": [],
+      "dislikedBy": [
+        "_RNFGVNnp8rDjtprPf8r"
+      ],
+      "editTimeStamp": "2023-02-10 00:49:21",
+      "postTimeStamp": "2023-02-08 14:49:21",
+      "description": "atsakymas atsakymas atsakymas atsakymas atsakymas atsakymas"
+    },
+    {
+      "id": "545ssssvddkdj",
+      "questionId": "9KoOkzM9Oza07NoOgH6jd",
+      "ownerId": "O--aFz4IpGs9abNnLUDmW",
+      "likedBy": [],
+      "dislikedBy": [
+        "_RNFGVNnp8rDjtprPf8r"
+      ],
+      "editTimeStamp": "2023-02-10 00:49:21",
+      "postTimeStamp": "2023-02-08 14:49:21",
+      "description": " Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nihil, id? Quibusdam animi voluptas, sed numquam nam sapiente explicabo nihil, totam officiis, enim iusto fuga. Voluptas modi harum, praesentium, consectetur enim, sint aliquam eaque expedita aperiam assumenda provident beatae molestiae odit magni tempora obcaecati? Dolorum aliquam, dolore iure eligendi in repellat."
+    },
+    {
+      "id": "545ddakdj",
+      "questionId": "9KoOkzM9qqqqqqoOgH6jd",
+      "ownerId": "O--aFz4IpGs9abNnLUDmW",
+      "likedBy": [],
+      "dislikedBy": [
+        "_RNFGVNnp8rDjtprPf8r"
+      ],
+      "editTimeStamp": "2023-02-10 00:49:21",
+      "postTimeStamp": "2023-02-08 14:49:21",
+      "description": "BLABLABLA"
+    }
+  ]
 }

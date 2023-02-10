@@ -1,4 +1,4 @@
-import OwnerInfo from "./questionComponents/OwnerInfo";
+import PostOwnerInfo from "./questionComponents/PostOwnerInfo";
 import QuestionStatistics from "./questionComponents/QuestionStatistics";
 import TimeStamp from "./questionComponents/TimeStamp";
 import { Link } from "react-router-dom";
@@ -22,7 +22,7 @@ const QuestionSnippet = ({ question }) => {
         className="question-snip__header"
         style={{ display: "flex", justifyContent: "space-between" }}
       >
-        <OwnerInfo ownerId={question.ownerId} />
+        <PostOwnerInfo ownerId={question.ownerId} />
         <TimeStamp postTimeStamp={question.postTimeStamp} editTimeStamp={question.editTimeStamp} />
       </header>
       <main className="question-snip__main">

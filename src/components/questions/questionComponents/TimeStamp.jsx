@@ -1,7 +1,7 @@
 const TimeStamp = ({ postTimeStamp, editTimeStamp }) => {
   return (
     <>
-      <div className="questionTimeStamp">
+      <div className="postTimeStamp">
         <span>{editTimeStamp ? `Edited on ${editTimeStamp}` : `Posted on ${postTimeStamp}`}</span>
       </div>
     </>

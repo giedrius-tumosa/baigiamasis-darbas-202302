@@ -15,12 +15,16 @@ const AnswerProvider = ({ children }) => {
     getErr: "",
     postErr: ""
   });
+  const [editMode, setEditMode] = useState(false);
+  const [deleteMode, setDeleteMode] = useState(false);
 
   // Error library
 
   const errorLib = {
     getErr: "Error: could not retreive answer data from server.",
-    postErr: "Error: could not post new answer data to server."
+    postErr: "Error: could not post new answer data to server.",
+    patchErr: "Error: could not send updates to the server.",
+    deleteErr: "Error: could not delete post from server."
   };
 
   // Functions
@@ -49,13 +53,44 @@ const AnswerProvider = ({ children }) => {
     }
   };
 
+  const updateAnswer = async (answer) => {
+    try {
+      const updatedAnswers = answers.map(el => {
+        if (el.id === answer.id) {
+          return { ...el, ...answer };
+        }
+        return el;
+      });
+      setAnswers(updatedAnswers);
+      patchData(ENDPOINT_ANSWERS, answer, errorLib.patchErr);
+      setAnswerFetchErrors({ ...answerFetchErrors, patchErr: "" });
+    } catch (error) {
+      setAnswerFetchErrors({ ...answerFetchErrors, patchErr: error.message });
+      setAnswers([...answers]);
+    }
+  };
+
+  const deleteAnswer = async (answerId) => {
+    try {
+      const updatedAnswers = answers.filter(answ => answ.id !== answerId);
+      setAnswers(updatedAnswers);
+      deleteData(ENDPOINT_ANSWERS, answerId, errorLib.deleteErr);
+      setAnswerFetchErrors({ ...answerFetchErrors, deleteErr: "" });
+    } catch (error) {
+      setAnswerFetchErrors({ ...answerFetchErrors, deleteErr: error.message });
+      setAnswers(answers);
+    }
+  };
 
   return (
     <AnswerContext.Provider value={{
       answers, setAnswers,
       loadingAnswers, setLoadingAnswers,
       answerFetchErrors, setAnswerFetchErrors,
-      getAnswers, postAnswer
+      getAnswers, postAnswer,
+      updateAnswer, editMode, setEditMode,
+      deleteMode, setDeleteMode,
+      deleteAnswer
     }}>
       {children}
     </AnswerContext.Provider>

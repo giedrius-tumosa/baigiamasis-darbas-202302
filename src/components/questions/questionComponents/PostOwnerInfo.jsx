@@ -2,34 +2,34 @@ import { useContext, useEffect, useState } from "react";
 import UserContext from "../../../store/UserContext";
 import FigureImage from "../../global/FigureImage";
 
-const OwnerInfo = ({ ownerId }) => {
+const PostOwnerInfo = ({ ownerId }) => {
   const { users, loadingUsers } = useContext(UserContext);
-  const [questionOwner, setQuestionOwner] = useState(null);
+  const [postOwner, setPostOwner] = useState(null);
 
   useEffect(() => {
     const loadUser = async (ownerId) => {
       const user = await users.find((user) => user.id === ownerId);
-      setQuestionOwner(user);
+      setPostOwner(user);
     };
     loadUser(ownerId);
   }, [loadingUsers]);
 
   return (
     <>
-      {questionOwner && (
+      {postOwner && (
         <div
-          className="questionOwnerInfo"
+          className="postOwnerInfo"
           style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}
         >
           <FigureImage
             className="profileImgSmall"
-            attributes={{ width: 40, height: 40, src: questionOwner.userProfileImgUrl }}
+            attributes={{ width: 40, height: 40, src: postOwner.userProfileImgUrl }}
           />
-          <span>{`Asked by ${questionOwner.userName}`}</span>
+          <span>{`By ${postOwner.userName}`}</span>
         </div>
       )}
-      {!questionOwner && (
-        <div className="questionOwnerInfo">
+      {!postOwner && (
+        <div className="postOwnerInfo">
           <span>{`loading...`}</span>
         </div>
       )}
@@ -37,4 +37,4 @@ const OwnerInfo = ({ ownerId }) => {
   );
 };
 
-export default OwnerInfo;
+export default PostOwnerInfo;
