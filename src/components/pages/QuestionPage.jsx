@@ -1,5 +1,4 @@
 import { useParams } from "react-router-dom";
-import QuestionFull from "../questions/QuestionFull";
 import QuestionContext from "../../store/QuestionContext";
 import { useContext } from "react";
 import QuestionSet from "../questions/QuestionSet";
