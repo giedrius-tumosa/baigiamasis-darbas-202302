@@ -20,6 +20,8 @@ const QuestionProvider = ({ children }) => {
   });
   const [editMode, setEditMode] = useState(false);
   const [deleteMode, setDeleteMode] = useState(false);
+  const [questionSort, setQuestionSort] = useState("");
+  const [filterWithAnswers, setFilterWithAnswers] = useState(false);
 
 
   // Error library
@@ -94,7 +96,9 @@ const QuestionProvider = ({ children }) => {
       getQuestions, postQuestion,
       updateQuestion, editMode,
       setEditMode, deleteQuestion,
-      deleteMode, setDeleteMode
+      deleteMode, setDeleteMode,
+      questionSort, setQuestionSort,
+      filterWithAnswers, setFilterWithAnswers
     }}>
       {children}
     </QuestionContext.Provider>

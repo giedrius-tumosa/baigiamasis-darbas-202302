@@ -1,9 +1,11 @@
 import { useContext, useEffect, useState } from "react";
 import UserContext from "../../../store/UserContext";
 import QuestionContext from "../../../store/QuestionContext";
+import AnswerContext from "../../../store/AnswerContext";
 
 const QuestionStatistics = ({ question }) => {
   const { currentUser } = useContext(UserContext);
+  const { answers } = useContext(AnswerContext);
   const { questions, setQuestions, updateQuestion } = useContext(QuestionContext);
 
   const [currentUserLiked, setCurrentUserLiked] = useState(
@@ -84,6 +86,11 @@ const QuestionStatistics = ({ question }) => {
           <span title="Number of dislikes" className="dislikeNumber">
             {question.dislikedBy.length}
           </span>
+        </div>
+        <div className="numOfAnswers">
+          <span title="Number of answers">{`Answers: ${
+            answers.filter((answ) => answ.questionId === question.id).length
+          }`}</span>
         </div>
       </div>
     </>
