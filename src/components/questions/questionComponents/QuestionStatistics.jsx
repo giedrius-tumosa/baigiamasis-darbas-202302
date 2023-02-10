@@ -50,7 +50,7 @@ const QuestionStatistics = ({ question }) => {
       setCurrentUserDisliked(false);
       const updatedQuestion = {
         ...question,
-        dislikedBy: question.likedBy.filter((el) => el !== currentUser.id),
+        dislikedBy: question.dislikedBy.filter((el) => el !== currentUser.id),
       };
       updateQuestion(updatedQuestion);
     }
