@@ -16,6 +16,7 @@ function App() {
   useEffect(() => {
     getUsers();
   }, []);
+  //TODO: kur padeti getUsers? logine?
 
   return (
     <>

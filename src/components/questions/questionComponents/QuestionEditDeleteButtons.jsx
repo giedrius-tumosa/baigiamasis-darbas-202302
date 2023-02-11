@@ -15,7 +15,7 @@ const QuestionEditDeleteButtons = ({ question }) => {
     setEditMode(false);
     deleteQuestion(question.id);
     setDeleteMode(true);
-    navigate("/");
+    navigate(-1);
   };
 
   return (

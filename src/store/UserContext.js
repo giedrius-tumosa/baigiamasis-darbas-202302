@@ -57,7 +57,6 @@ const UserProvider = ({ children }) => {
       userFetchErrors, setUserFetchErrors,
       loadingUsers, setLoadingUsers,
       users, getUsers, postUser,
-
     }}>
       {children}
     </UserContext.Provider>

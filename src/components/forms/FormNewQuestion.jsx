@@ -46,7 +46,7 @@ const FormNewQuestion = () => {
               };
             };
             postQuestion(newQuestion(values));
-            navigate("/");
+            navigate(-1);
             resetForm();
           }}
         >
