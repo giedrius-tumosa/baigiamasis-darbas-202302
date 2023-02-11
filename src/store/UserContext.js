@@ -1,4 +1,5 @@
 import { createContext, useEffect, useState } from "react";
+import { stringify } from "uuid";
 import { getData, postData } from "../fetchApiFunctions";
 
 const ENDPOINT_USERS = "http://localhost:5000/users";
@@ -18,12 +19,20 @@ const UserProvider = ({ children }) => {
 
   // Error library
 
+
+
   const errorLib = {
     getErr: "Error: could not retreive user data from server.",
     postErr: "Error: could not post new user data to server."
   };
 
   // Functions
+  const saveToSessionStorage = (user) => {
+    sessionStorage.setItem("askMeUser", JSON.stringify(user));
+  };
+  const deleteFromSessionStorage = () => {
+    sessionStorage.removeItem("askMeUser");
+  };
 
 
   const getUsers = async () => {
@@ -50,6 +59,8 @@ const UserProvider = ({ children }) => {
     }
   };
 
+
+
   return (
     <UserContext.Provider value={{
       userLoggedin, setUserLoggedin,
@@ -57,6 +68,8 @@ const UserProvider = ({ children }) => {
       userFetchErrors, setUserFetchErrors,
       loadingUsers, setLoadingUsers,
       users, getUsers, postUser,
+      userLoggedin, saveToSessionStorage,
+      deleteFromSessionStorage
     }}>
       {children}
     </UserContext.Provider>

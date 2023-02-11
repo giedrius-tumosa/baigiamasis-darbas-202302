@@ -6,8 +6,14 @@ import { useNavigate } from "react-router-dom";
 
 const FormLogin = () => {
   const [loginError, setLoginError] = useState("");
-  const { users, setCurrentUser, userLoggedin, setUserLoggedin, currentUser } =
-    useContext(UserContext);
+  const {
+    users,
+    setCurrentUser,
+    userLoggedin,
+    setUserLoggedin,
+    currentUser,
+    saveToSessionStorage,
+  } = useContext(UserContext);
   const navigate = useNavigate();
 
   const validationSchema = Yup.object().shape({
@@ -33,6 +39,7 @@ const FormLogin = () => {
             );
             if (userData) {
               setLoginError("");
+              saveToSessionStorage(userData);
               setCurrentUser(userData);
               setUserLoggedin(true);
               navigate(`/users/${userData.id}`);

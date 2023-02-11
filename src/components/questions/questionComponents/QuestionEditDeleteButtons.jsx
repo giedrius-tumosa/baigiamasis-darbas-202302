@@ -3,7 +3,7 @@ import UserContext from "../../../store/UserContext";
 import QuestionContext from "../../../store/QuestionContext";
 import { useNavigate } from "react-router-dom";
 
-const QuestionEditDeleteButtons = ({ question }) => {
+const QuestionEditDeleteButtons = ({ question = {} }) => {
   const { editMode, setEditMode, deleteQuestion, setDeleteMode } = useContext(QuestionContext);
   const { currentUser } = useContext(UserContext);
   const navigate = useNavigate();
@@ -12,10 +12,10 @@ const QuestionEditDeleteButtons = ({ question }) => {
     setEditMode(true);
   };
   const handleDelete = () => {
+    navigate(-1);
     setEditMode(false);
     deleteQuestion(question.id);
     setDeleteMode(true);
-    navigate(-1);
   };
 
   return (

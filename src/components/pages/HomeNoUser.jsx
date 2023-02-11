@@ -6,11 +6,19 @@ import UserContext from "../../store/UserContext";
 import { useNavigate } from "react-router-dom";
 
 const HomeNoUser = () => {
-  const { userLoggedin, currentUser } = useContext(UserContext);
+  const { userLoggedin, currentUser, setCurrentUser, setUserLoggedin } = useContext(UserContext);
   const navigate = useNavigate();
 
   useEffect(() => {
     userLoggedin && navigate(`/users/${currentUser.id}`);
+  }, [userLoggedin]);
+
+  useEffect(() => {
+    const userData = JSON.parse(sessionStorage.getItem("askMeUser"));
+    if (userData) {
+      setCurrentUser(userData);
+      setUserLoggedin(true);
+    }
   }, []);
 
   return (

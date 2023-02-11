@@ -11,11 +11,12 @@ import UserOnlyContent from "./components/pages/UserOnlyContent";
 import NewQuestionPage from "./components/pages/NewQuestionPage";
 
 function App() {
-  const { getUsers } = useContext(UserContext);
+  const { getUsers, setCurrentUser, setUserLoggedin } = useContext(UserContext);
 
   useEffect(() => {
     getUsers();
   }, []);
+
   //TODO: kur padeti getUsers? logine?
 
   return (
