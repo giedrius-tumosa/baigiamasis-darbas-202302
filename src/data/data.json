@@ -24,89 +24,37 @@
   ],
   "questions": [
     {
-      "id": "9KoOkzM9Oza07NoOgH6jd",
-      "ownerId": "_RNFGVNnp8rDjtprPf8rX",
-      "likedBy": [],
-      "dislikedBy": [
-        "_RNFGVNnp8rDjtprPf8r"
-      ],
-      "isEdited": false,
-      "editTimeStamp": "2023-02-02 10:10:17",
-      "postTimeStamp": "2023-02-08 14:49:21",
-      "title": "Bobby",
-      "description": "Activision Blizzard CEO Bobby Kotick has claimed that blocking Microsoft’s acquisition of the Call of Duty publisher would represent a major blow to the UK government’s ambition of becoming a technology superpower.",
-      "numOfAnswers": 2
-    },
-    {
-      "id": "9KoOkzM9qqqqqqoOgH6jd",
-      "ownerId": "O--aFz4IpGs9abNnLUDmW",
-      "likedBy": [
-        "_RNFGVNnp8rDjtprPf8r"
-      ],
-      "dislikedBy": [],
-      "isEdited": false,
-      "editTimeStamp": "2023-02-10 02:49:21",
-      "postTimeStamp": "2023-02-10 14:49:21",
-      "title": "Žinia statantiems individualius namus: apribojamos galimybės tai daryti patiems",
-      "description": "HELLO."
-    },
-    {
-      "id": "U1d5urWe9YKZkEOivQ2TT",
-      "ownerId": "Gdqhqm_Og2ZZ08_qvnNAv",
-      "likedBy": [],
-      "dislikedBy": [],
-      "isEdited": false,
-      "editTimeStamp": "",
-      "postTimeStamp": "2023-02-11 10:11:21",
-      "title": "NAUJOKE",
-      "description": "NAUJAS NAUJASNAUJASNAUJASNAUJASNAUJASNAUJAS"
-    },
-    {
-      "id": "lCtHZgQN_jbYmQC459eiO",
+      "id": "0lVVN70fm8swETj3Px4zz",
       "ownerId": "O--aFz4IpGs9abNnLUDmW",
       "likedBy": [],
       "dislikedBy": [],
       "isEdited": false,
       "editTimeStamp": "",
-      "postTimeStamp": "2023-02-11 12:05:20",
-      "title": "Etymology and alternative terms",
-      "description": "Many other terms exist for an individual motion-picture, including \"picture\", \"picture show\", \"moving picture\", \"photoplay\", and \"flick\". The most common term in the United States is \"movie\", while in Europe \"film\" is preferred. Archaic terms include \"animated pictures\" and \"animated photography\". "
+      "postTimeStamp": "2023-02-11 17:30:04",
+      "title": "Xbox Series X or Nintendo Switch?",
+      "description": "Hey guys, I'm in a bit of a conundrum here in making a decision for myself. I'm looking for a game console I can play at work, and it's come down to the Xbox Series X and the Nintendo Switch. Honestly would have chosen the PS5 but they're like finding a unicorn or a needle in a haystack, so that's out of the question"
     }
   ],
   "answers": [
     {
-      "id": "545ddkdj",
-      "questionId": "9KoOkzM9Oza07NoOgH6jd",
-      "ownerId": "O--aFz4IpGs9abNnLUDmW",
-      "likedBy": [],
-      "dislikedBy": [
-        "_RNFGVNnp8rDjtprPf8r"
-      ],
-      "editTimeStamp": "2023-02-10 00:49:21",
-      "postTimeStamp": "2023-02-08 14:49:21",
-      "description": "atsakymas atsakymas atsakymas atsakymas atsakymas atsakymas"
-    },
-    {
-      "id": "545ssssvddkdj",
-      "questionId": "9KoOkzM9Oza07NoOgH6jd",
-      "ownerId": "O--aFz4IpGs9abNnLUDmW",
-      "likedBy": [],
-      "dislikedBy": [
-        "_RNFGVNnp8rDjtprPf8r"
-      ],
-      "editTimeStamp": "2023-02-10 00:49:21",
-      "postTimeStamp": "2023-02-08 14:49:21",
-      "description": " Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nihil, id? Quibusdam animi voluptas, sed numquam nam sapiente explicabo nihil, totam officiis, enim iusto fuga. Voluptas modi harum, praesentium, consectetur enim, sint aliquam eaque expedita aperiam assumenda provident beatae molestiae odit magni tempora obcaecati? Dolorum aliquam, dolore iure eligendi in repellat."
-    },
-    {
-      "id": "XDimvGRDyJG7j4z6ieiPr",
-      "ownerId": "_RNFGVNnp8rDjtprPf8rX",
-      "questionId": "9KoOkzM9qqqqqqoOgH6jd",
+      "id": "oVRCztH8QrRFhQnOJ0OIM",
+      "ownerId": "Gdqhqm_Og2ZZ08_qvnNAv",
+      "questionId": "0lVVN70fm8swETj3Px4zz",
       "likedBy": [],
       "dislikedBy": [],
       "editTimeStamp": "",
-      "postTimeStamp": "2023-02-10 11:07:06",
-      "description": "laba diena"
+      "postTimeStamp": "2023-02-11 17:30:45",
+      "description": "Of the two options, I'd go with Switch since it gets the Nintendo exclusives. Series X seems like a lot of money for a part time console that only gives you access to the same games your PC already covers."
+    },
+    {
+      "id": "v5kxpaWTvWRaex_QH4ahk",
+      "ownerId": "_RNFGVNnp8rDjtprPf8rX",
+      "questionId": "0lVVN70fm8swETj3Px4zz",
+      "likedBy": [],
+      "dislikedBy": [],
+      "editTimeStamp": "",
+      "postTimeStamp": "2023-02-11 17:31:40",
+      "description": "I've seen a lot of people suggest Steam Deck on this sub for various reasons. It's a great piece of hardware for sure, but if you put in an order now you're likely waiting at least several months if not more than a year, and I suspect most people asking these questions are wondering what's their best option now, not a year from now."
     }
   ]
 }

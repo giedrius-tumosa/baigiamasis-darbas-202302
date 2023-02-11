@@ -15,10 +15,6 @@ const UserPanel = () => {
     navigate("/");
   };
 
-  useEffect(() => {
-    console.log(currentUser);
-  }, []);
-
   return (
     <div className="userPanel" style={{ display: "flex", gap: "0.5rem", alignItems: "center" }}>
       <FigureImage
@@ -39,5 +35,5 @@ const UserPanel = () => {
     </div>
   );
 };
-
+//TODO: kur deti getQuestions? gal i app?
 export default UserPanel;
