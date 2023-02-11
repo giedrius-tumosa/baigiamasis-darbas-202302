@@ -49,7 +49,7 @@ const AnswerProvider = ({ children }) => {
       setAnswerFetchErrors({ ...answerFetchErrors, postErr: "" });
     } catch (error) {
       setAnswerFetchErrors({ ...answerFetchErrors, postErr: error.message });
-      setAnswers([...answers]); //TODO: check if works
+      setAnswers([...answers]);
     }
   };
 

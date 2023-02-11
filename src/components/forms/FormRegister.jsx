@@ -3,14 +3,15 @@ import * as Yup from "yup";
 import { nanoid } from "nanoid";
 import { useState, useContext } from "react";
 import UserContext from "../../store/UserContext";
+import { useNavigate } from "react-router-dom";
 
 const FormRegister = () => {
   // States
   const [formError, setFormError] = useState("");
-  const [userExists, setUserExists] = useState(false);
+  const navigate = useNavigate();
 
   // Context
-  const { users, postUser } = useContext(UserContext);
+  const { users, postUser, setUserLoggedin, setCurrentUser, currentUser } = useContext(UserContext);
 
   // Functions
   const validationSchema = Yup.object().shape({
@@ -35,7 +36,7 @@ const FormRegister = () => {
         <h2>Register:</h2>
         <Formik
           initialValues={{
-            id: "",
+            id: nanoid(),
             userName: "",
             userProfileImgUrl: "",
             userEmail: "",
@@ -46,7 +47,7 @@ const FormRegister = () => {
           onSubmit={(values, { resetForm, setSubmitting, setFieldValue }) => {
             const editInputs = (inputs) => {
               delete inputs.userPasswordRepeat;
-              return { id: nanoid(), ...inputs };
+              return { ...inputs };
             };
             const newUser = editInputs(values);
             setFormError("");
@@ -55,11 +56,12 @@ const FormRegister = () => {
                 (user) => user.userEmail === values.userEmail || user.userName === values.userName
               )
             ) {
-              setUserExists(false);
+              setUserLoggedin(true);
+              setCurrentUser(newUser);
               postUser(newUser);
+              navigate(`/users/${newUser.id}`);
               resetForm();
             } else {
-              setUserExists(true);
               setFormError("Such user already exists. Change email and/or name and try again.");
               resetForm();
               setFieldValue("userName", values.userName);

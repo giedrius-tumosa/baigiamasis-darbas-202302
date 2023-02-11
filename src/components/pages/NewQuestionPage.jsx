@@ -1,5 +1,11 @@
+import FormNewQuestion from "../forms/FormNewQuestion";
+
 const NewQuestionPage = () => {
-  return <h2>NewQuestionPage</h2>;
+  return (
+    <>
+      <FormNewQuestion />
+    </>
+  );
 };
 
 export default NewQuestionPage;

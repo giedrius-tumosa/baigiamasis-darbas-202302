@@ -4,9 +4,11 @@ import { nanoid } from "nanoid";
 import QuestionContext from "../../store/QuestionContext";
 import { useContext } from "react";
 import UserContext from "../../store/UserContext";
+import { useNavigate } from "react-router-dom";
 
 const FormNewQuestion = () => {
   const { currentUser } = useContext(UserContext);
+  const navigate = useNavigate();
 
   const { postQuestion } = useContext(QuestionContext);
   const validationSchema = Yup.object().shape({
@@ -14,7 +16,7 @@ const FormNewQuestion = () => {
       .min(2, "Title must be at least 2 characters long.")
       .max(100, "Title must not exceed 30 characters.")
       .required("Required field."),
-    description: Yup.string() //TODO: padidinti min iki 20 chars
+    description: Yup.string()
       .min(20, "Description must be at least 5 characters long.")
       .max(500, "Description must not exceed 500 characters.")
       .required("Required field."),
@@ -44,6 +46,7 @@ const FormNewQuestion = () => {
               };
             };
             postQuestion(newQuestion(values));
+            navigate("/");
             resetForm();
           }}
         >

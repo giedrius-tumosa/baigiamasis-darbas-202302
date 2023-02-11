@@ -2,11 +2,14 @@ import { useContext, useEffect } from "react";
 import QuestionContext from "../../store/QuestionContext";
 import AnswerContext from "../../store/AnswerContext";
 import QuestionSnippet from "../questions/QuestionSnippet";
+import { useNavigate } from "react-router-dom";
+import UserContext from "../../store/UserContext";
 
 const QuestionsList = () => {
-  const { questions, loadingQuestions, getQuestions, questionSort, filterWithAnswers } =
-    useContext(QuestionContext);
-  const { answers } = useContext(AnswerContext);
+  const { questions, loadingQuestions, getQuestions, questionSort } = useContext(QuestionContext);
+  const { answers, getAnswers } = useContext(AnswerContext);
+  const { userLoggedin } = useContext(UserContext);
+  const navigate = useNavigate();
 
   const questionsByNewest = () => {
     const arrayToSort = [...questions];
@@ -42,13 +45,28 @@ const QuestionsList = () => {
     return arrayToSort;
   };
 
+  const handleAsk = () => {
+    navigate("/new_question");
+  };
+
   useEffect(() => {
     getQuestions();
+    getAnswers();
   }, []);
 
   return (
     <>
       <section style={{ display: "flex", gap: "1rem", flexDirection: "column", padding: "1rem" }}>
+        <div className="newQuestionButton" style={{ display: "flex", gap: "1rem" }}>
+          <h3>Ask a new question: </h3>
+          {userLoggedin ? (
+            <button type="button" onClick={handleAsk}>
+              Ask
+            </button>
+          ) : (
+            <span>Only logged in users can ask questions.</span>
+          )}
+        </div>
         <p>{loadingQuestions && "Loading..."}</p>
         {!loadingQuestions &&
           (questionSort === "" || questionSort === "oldestFirst") &&

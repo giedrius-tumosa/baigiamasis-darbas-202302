@@ -1,4 +1,4 @@
-import PostOwnerInfo from "./questionComponents/PostOwnerInfo";
+import PostOwnerInfo from "../user/PostOwnerInfo";
 import QuestionStatistics from "./questionComponents/QuestionStatistics";
 import TimeStamp from "./questionComponents/TimeStamp";
 import { Link } from "react-router-dom";

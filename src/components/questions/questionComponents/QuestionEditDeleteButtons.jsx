@@ -16,7 +16,6 @@ const QuestionEditDeleteButtons = ({ question }) => {
     deleteQuestion(question.id);
     setDeleteMode(true);
     navigate("/");
-    //TODO: add navigate to home page
   };
 
   return (

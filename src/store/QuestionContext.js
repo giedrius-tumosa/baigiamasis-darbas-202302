@@ -55,7 +55,7 @@ const QuestionProvider = ({ children }) => {
       setQuestionFetchErrors({ ...questionFetchErrors, postErr: "" });
     } catch (error) {
       setQuestionFetchErrors({ ...questionFetchErrors, postErr: error.message });
-      setQuestions([...questions]); //TODO: check if works
+      setQuestions([...questions]);
     }
   };
 

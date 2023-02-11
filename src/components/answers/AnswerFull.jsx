@@ -1,4 +1,4 @@
-import PostOwnerInfo from "../questions/questionComponents/PostOwnerInfo";
+import PostOwnerInfo from "../user/PostOwnerInfo";
 import AnswerStatistics from "./AnswerStatistics";
 import TimeStamp from "../questions/questionComponents/TimeStamp";
 import AnswerEditDeleteButtons from "./AnswerEditDeleteButtons";

@@ -1,6 +1,6 @@
 import { useContext, useEffect, useState } from "react";
-import UserContext from "../../../store/UserContext";
-import FigureImage from "../../global/FigureImage";
+import UserContext from "../../store/UserContext";
+import FigureImage from "../global/FigureImage";
 
 const PostOwnerInfo = ({ ownerId }) => {
   const { users, loadingUsers } = useContext(UserContext);
@@ -23,7 +23,12 @@ const PostOwnerInfo = ({ ownerId }) => {
         >
           <FigureImage
             className="profileImgSmall"
-            attributes={{ width: 40, height: 40, src: postOwner.userProfileImgUrl }}
+            attributes={{
+              width: 40,
+              height: 40,
+              src: postOwner.userProfileImgUrl,
+              alt: "User profile image.",
+            }}
           />
           <span>{`By ${postOwner.userName}`}</span>
         </div>

@@ -22,7 +22,6 @@ const FormNewAnswer = () => {
   return (
     <>
       <div className="formNewAnswerWrapper">
-        <h2>Post your answer:</h2>
         <Formik
           initialValues={{
             description: "",

@@ -1,4 +1,3 @@
-//TODO: what to do with errors - throw here or in contexts
 export const getData = async (endpoint, errorMsg) => {
   const response = await fetch(endpoint);
   if (!response.ok) throw Error(errorMsg);

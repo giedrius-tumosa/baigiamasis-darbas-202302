@@ -1,20 +1,17 @@
 import QuestionList from "../questions/QuestionsList";
-import AnswerContext from "../../store/AnswerContext";
-import { useContext, useEffect } from "react";
 import Filter from "../filter/Filter";
+import HeaderUser from "../header/HeaderUser";
 
 const HomeUser = () => {
-  const { answers, loadingAnswers, getAnswers } = useContext(AnswerContext);
-
-  useEffect(() => {
-    getAnswers();
-  }, []);
-
   return (
     <>
-      <h2>HomeUser</h2>
-      <Filter />
-      <QuestionList />
+      <HeaderUser />
+      <aside className="aside">
+        <Filter />
+      </aside>
+      <main className="main">
+        <QuestionList />
+      </main>
     </>
   );
 };
