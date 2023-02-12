@@ -1,0 +1,42 @@
+@use "../styles/variables" as v;
+
+.header {
+  border-bottom: v.$border-light;
+  margin-bottom: 1rem;
+
+  .contentWrap_global {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    gap: 1rem;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 80px;
+    padding-block: 1rem;
+
+    .userButtonContainer {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      align-items: center;
+
+      a {
+        align-self: center;
+        text-decoration: underline;
+        color: v.$color-650;
+      }
+    }
+    @media screen and (min-width: 780px) {
+      flex-direction: row;
+
+      .userButtonContainer {
+        flex-direction: row;
+
+        a {
+          align-self: flex-start;
+        }
+      }
+    }
+  }
+}

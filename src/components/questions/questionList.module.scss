@@ -1,0 +1,20 @@
+@use "../../styles/variables" as v;
+
+.questionList {
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+
+  .newQuestionButton {
+    .btnAskQuestion {
+      margin-top: 1rem;
+      @include v.post-basic;
+      width: 100px;
+      background-color: #fff;
+      cursor: pointer;
+      &:hover {
+        background-color: #f5f5f5;
+      }
+    }
+  }
+}

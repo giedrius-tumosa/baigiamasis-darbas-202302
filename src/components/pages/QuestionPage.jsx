@@ -8,8 +8,11 @@ const QuestionPage = () => {
   const { questions } = useContext(QuestionContext);
   return (
     <>
-      <h2>QuestionPage {questionId}</h2>
-      <QuestionSet question={questions.find((el) => el.id === questionId)} />
+      <main>
+        <div className="contentWrap_global">
+          <QuestionSet question={questions.find((el) => el.id === questionId)} />
+        </div>
+      </main>
     </>
   );
 };

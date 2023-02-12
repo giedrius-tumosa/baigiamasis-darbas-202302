@@ -6,12 +6,14 @@ const HomeUser = () => {
   return (
     <>
       <HeaderUser />
-      <aside className="aside">
-        <Filter />
-      </aside>
-      <main className="main">
-        <QuestionList />
-      </main>
+      <div className="contentWrap_global">
+        <aside className="aside">
+          <Filter />
+        </aside>
+        <main className="main">
+          <QuestionList />
+        </main>
+      </div>
     </>
   );
 };

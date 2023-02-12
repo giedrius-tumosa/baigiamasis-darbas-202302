@@ -2,7 +2,7 @@
 
 .question {
   @include v.post-basic;
-  width: min(700px, 100%);
+  width: 100%;
 
   .question__header {
     display: flex;

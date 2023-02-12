@@ -3,6 +3,7 @@ import * as Yup from "yup";
 import { useState, useContext } from "react";
 import UserContext from "../../store/UserContext";
 import { useNavigate } from "react-router-dom";
+import styles from "./formLogin.module.scss";
 
 const FormLogin = () => {
   const [loginError, setLoginError] = useState("");
@@ -17,68 +18,66 @@ const FormLogin = () => {
   const navigate = useNavigate();
 
   const validationSchema = Yup.object().shape({
-    userName: Yup.string().required("Required field."),
-    userPassword: Yup.string().required("Required field."),
+    userName: Yup.string().required("User name required."),
+    userPassword: Yup.string().required("Password required."),
   });
   // TODO: ar reikia issubmitting
   //  TODO: ar perdaryt su localstorage
   return (
     <>
-      <div className="formLoginWrapper" style={{ display: "flex", gap: "0.5rem" }}>
-        <h2>Login:</h2>
-        <Formik
-          initialValues={{
-            userName: "",
-            userPassword: "",
-          }}
-          validationSchema={validationSchema}
-          onSubmit={(values, { resetForm }) => {
-            const userData = users.find(
-              (user) =>
-                user.userName === values.userName && user.userPassword === values.userPassword
-            );
-            if (userData) {
-              setLoginError("");
-              saveToSessionStorage(userData);
-              setCurrentUser(userData);
-              setUserLoggedin(true);
-              navigate(`/users/${userData.id}`);
-            }
-            if (!userData) {
-              setUserLoggedin(false);
-              setLoginError("Incorrect user name or password.");
-            }
-            resetForm();
-          }}
-        >
-          {() => (
-            <Form style={{ display: "flex", gap: "0.5rem" }}>
-              <div className="userNameWrapper" style={{ display: "flex", gap: "0.5rem" }}>
+      <Formik
+        initialValues={{
+          userName: "",
+          userPassword: "",
+        }}
+        validationSchema={validationSchema}
+        onSubmit={(values, { resetForm }) => {
+          const userData = users.find(
+            (user) => user.userName === values.userName && user.userPassword === values.userPassword
+          );
+          if (userData) {
+            setLoginError("");
+            saveToSessionStorage(userData);
+            setCurrentUser(userData);
+            setUserLoggedin(true);
+            navigate(`/users/${userData.id}`);
+          }
+          if (!userData) {
+            setUserLoggedin(false);
+            setLoginError("Incorrect user name or password.");
+          }
+          resetForm();
+        }}
+      >
+        {() => (
+          <Form className={styles.formLogin}>
+            <div className={styles.formInputs}>
+              <div className="userNameWrapper">
                 <label htmlFor="userName">User name: </label>
                 <Field name="userName" id="userName" />
-                <ErrorMessage name="userName">
-                  {(message) => <div className="formErrorMessage">{message}</div>}
-                </ErrorMessage>
               </div>
-
-              <div className="userPasswordWrapper" style={{ display: "flex", gap: "0.5rem" }}>
+              <div className="userPasswordWrapper">
                 <label htmlFor="userPassword">Password: </label>
                 <Field name="userPassword" id="userPassword" type="password" />
-                <ErrorMessage name="userPassword">
-                  {(message) => <div className="formErrorMessage">{message}</div>}
-                </ErrorMessage>
               </div>
-
-              <div className="buttonSubmitWrap">
+              <div className={styles.buttonSubmitWrap}>
                 <button type="submit">Login</button>
               </div>
+            </div>
+            <div className={styles.formErrors}>
+              <ErrorMessage name="userName">
+                {(message) => <div className="formErrorMessage">{message}</div>}
+              </ErrorMessage>
+              <ErrorMessage name="userPassword">
+                {(message) => <div className="formErrorMessage">{message}</div>}
+              </ErrorMessage>
               <div className="formErrorMessage">
                 <p>{loginError}</p>
               </div>
-            </Form>
-          )}
-        </Formik>
-      </div>
+            </div>
+          </Form>
+        )}
+      </Formik>
     </>
   );
 };

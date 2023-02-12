@@ -14,10 +14,16 @@ const RegistrationPage = () => {
 
   return (
     <>
-      {!sessionStorage.getItem("askMeUser") && <FormRegister />}
-      {sessionStorage.getItem("askMeUser") && (
-        <p>You are an existing user. Redirecting to your home page.</p>
-      )}
+      <main>
+        <div className="formSection">
+          {!sessionStorage.getItem("askMeUser") && <FormRegister />}
+          {sessionStorage.getItem("askMeUser") && (
+            <p className="formErrorMessage">
+              You are an existing user. Redirecting to your home page.
+            </p>
+          )}
+        </div>
+      </main>
     </>
   );
 };

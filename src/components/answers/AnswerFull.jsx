@@ -16,10 +16,7 @@ const AnswerFull = ({ answer }) => {
   return (
     //TODO: ka daryti su delete mode
     <article className={styles.answer}>
-      <header
-        className="answer__header"
-        style={{ display: "flex", justifyContent: "space-between" }}
-      >
+      <header className={styles.answer__header}>
         <PostOwnerInfo ownerId={answer.ownerId} />
         <TimeStamp postTimeStamp={answer.postTimeStamp} editTimeStamp={answer.editTimeStamp} />
       </header>

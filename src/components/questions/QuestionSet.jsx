@@ -11,13 +11,11 @@ const QuestionSet = ({ question }) => {
       {question && (
         <div className="questionSetWrap">
           <QuestionFull question={question} />
-          <div className="postAnswerContainer">
+          <AnswerList questionId={question.id} />
+
+          <div className="formSection formNewAnswerSection">
             <h2>Post your answer:</h2>
-            {userLoggedin ? <FormNewAnswer /> : <h5>Only logged in users can leave an answer.</h5>}
-          </div>
-          <AnswerList questionId={question.id} />}<h2>Post your answer:</h2>
-          <div className="postAnswerContainer">
-            {userLoggedin ? <FormNewAnswer /> : <h5>Only logged in users can leave an answer.</h5>}
+            {userLoggedin ? <FormNewAnswer /> : <p>Only logged in users can leave an answer.</p>}
           </div>
         </div>
       )}

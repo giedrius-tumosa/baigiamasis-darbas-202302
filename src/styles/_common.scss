@@ -6,13 +6,11 @@
 
 // Global styles
 
-//TODO: temporary delete START
-input,
-textarea,
-label,
-button {
-  margin-bottom: 0.5rem;
+body {
+  padding-inline: 1rem;
+  padding-block: 0.5rem;
 }
+
 input,
 textarea {
   font-size: 0.9em;
@@ -24,22 +22,34 @@ textarea {
 }
 
 #root > * {
-  margin-bottom: 2rem;
-  h2 {
-    margin-bottom: 0.5rem;
-  }
-  padding-left: 1rem;
   font-family: v.$font-family-global;
   line-height: 1.5;
 }
 
-.questionStatistics,
-.answerStatistics {
-  button {
-    display: inline;
-    margin-right: 0.5rem;
-    cursor: pointer;
+// Layout
+
+#root {
+  & > .contentWrap_global {
+    display: grid;
+    grid-template-columns: 100%;
+    gap: 2rem;
   }
 }
+.header {
+  grid-column: 1/-1;
+}
 
-//TODO: temporary delete END
+.contentWrap_global {
+  width: min(1200px, 100%);
+  margin: 0 auto;
+}
+
+@media screen and (min-width: 780px) {
+  #root {
+    & > .contentWrap_global {
+      display: grid;
+      grid-template-columns: 200px 1fr;
+      gap: 2rem;
+    }
+  }
+} ;

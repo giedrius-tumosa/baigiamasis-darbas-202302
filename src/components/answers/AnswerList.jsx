@@ -2,13 +2,14 @@ import { useContext, useEffect } from "react";
 import QuestionContext from "../../store/QuestionContext";
 import AnswerContext from "../../store/AnswerContext";
 import AnswerFull from "./AnswerFull";
+import styles from "./answerList.module.scss";
 
 const AnswerList = ({ questionId }) => {
   const { answers, loadingAnswers } = useContext(AnswerContext);
 
   return (
     <>
-      <section style={{ display: "flex", gap: "1rem", flexDirection: "column", padding: "1rem" }}>
+      <section className={styles.answerList}>
         <p>{loadingAnswers && "Loading..."}</p>
         {!loadingAnswers &&
           answers.map(

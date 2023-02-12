@@ -23,10 +23,7 @@ const QuestionFull = ({ question }) => {
           <p className={styles.question_description}>{question.description}</p>
         </div>
       </main>
-      <footer
-        className={styles.question__footer}
-        style={{ display: "flex", justifyContent: "space-between" }}
-      >
+      <footer className={styles.question__footer}>
         <QuestionStatistics question={question} />
         <QuestionEditDeleteButtons question={question} />
       </footer>

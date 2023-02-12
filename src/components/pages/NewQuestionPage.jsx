@@ -3,7 +3,9 @@ import FormNewQuestion from "../forms/FormNewQuestion";
 const NewQuestionPage = () => {
   return (
     <>
-      <FormNewQuestion />
+      <div className="formSection">
+        <FormNewQuestion />
+      </div>
     </>
   );
 };

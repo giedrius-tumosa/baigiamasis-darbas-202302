@@ -24,12 +24,14 @@ const HomeNoUser = () => {
   return (
     <>
       <HeaderNoUser />
-      <aside className="aside">
-        <Filter />
-      </aside>
-      <main className="main">
-        <QuestionList />
-      </main>
+      <div className="contentWrap_global">
+        <aside className="aside">
+          <Filter />
+        </aside>
+        <main className="main">
+          <QuestionList />
+        </main>
+      </div>
       {/* //TODO: do i need footer */}
     </>
   );

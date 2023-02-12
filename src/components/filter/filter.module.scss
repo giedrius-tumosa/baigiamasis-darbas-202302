@@ -1,0 +1,39 @@
+@use "../../styles/variables" as v;
+
+.filterWrap {
+  & > :first-child {
+    margin-bottom: 0.5rem;
+  }
+  display: flex;
+  flex-direction: column;
+
+  gap: 1rem;
+
+  .buttonWrapper {
+    display: flex;
+    gap: 0.7rem;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  button {
+    @include v.post-basic;
+    width: min(150px, 100%);
+    color: #000000;
+    cursor: pointer;
+    background-color: #fff;
+    &:hover {
+      background-color: #f5f5f5;
+    }
+  }
+  .filterWithAnswers {
+    display: flex;
+    gap: 1rem;
+  }
+}
+
+@media screen and (min-width: 780px) {
+  .buttonWrapper {
+    gap: 0.7rem;
+    flex-direction: column;
+  }
+} ;

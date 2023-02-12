@@ -6,7 +6,7 @@ import { FaThumbsUp, FaThumbsDown } from "react-icons/fa";
 import styles from "./answerStatistics.module.scss";
 
 const AnswerStatistics = ({ answer }) => {
-  const { currentUser } = useContext(UserContext);
+  const { currentUser, userLoggedin } = useContext(UserContext);
   const { updateAnswer } = useContext(AnswerContext);
 
   const [currentUserLiked, setCurrentUserLiked] = useState(
@@ -66,7 +66,7 @@ const AnswerStatistics = ({ answer }) => {
             className={`${currentUserLiked ? "opinionBtn-marked" : "opinionBtn"} likeBtn`}
             type="button"
             onClick={handleLike}
-            disabled={answer.ownerId === currentUser.id}
+            disabled={answer.ownerId === currentUser.id || !userLoggedin}
           >
             <FaThumbsUp />
           </button>
@@ -79,7 +79,7 @@ const AnswerStatistics = ({ answer }) => {
             className={`${currentUserDisliked ? "opinionBtn-marked" : "opinionBtn"} dislikeBtn`}
             type="button"
             onClick={handleDislike}
-            disabled={answer.ownerId === currentUser.id}
+            disabled={answer.ownerId === currentUser.id || !userLoggedin}
           >
             <FaThumbsDown />
           </button>

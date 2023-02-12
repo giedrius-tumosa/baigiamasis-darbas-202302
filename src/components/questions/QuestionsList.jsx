@@ -4,6 +4,7 @@ import AnswerContext from "../../store/AnswerContext";
 import QuestionSnippet from "../questions/QuestionSnippet";
 import { useNavigate } from "react-router-dom";
 import UserContext from "../../store/UserContext";
+import styles from "./questionList.module.scss";
 
 const QuestionsList = () => {
   const { questions, loadingQuestions, getQuestions, questionSort } = useContext(QuestionContext);
@@ -55,11 +56,11 @@ const QuestionsList = () => {
 
   return (
     <>
-      <section style={{ display: "flex", gap: "1rem", flexDirection: "column", padding: "1rem" }}>
-        <div className="newQuestionButton" style={{ display: "flex", gap: "1rem" }}>
-          <h3>Ask a new question: </h3>
+      <section className={styles.questionList}>
+        <div className={styles.newQuestionButton}>
+          <h2>Ask a new question: </h2>
           {userLoggedin ? (
-            <button type="button" onClick={handleAsk}>
+            <button className={styles.btnAskQuestion} type="button" onClick={handleAsk}>
               Ask
             </button>
           ) : (

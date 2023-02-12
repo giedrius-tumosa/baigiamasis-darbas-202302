@@ -17,10 +17,7 @@ const UserPanel = () => {
   };
 
   return (
-    <div
-      className={styles.userPanel}
-      style={{ display: "flex", gap: "0.5rem", alignItems: "center" }}
-    >
+    <div className={styles.userPanel}>
       <FigureImage
         className={styles.profileImgSmall}
         attributes={{
@@ -30,7 +27,7 @@ const UserPanel = () => {
           alt: "User profile image.",
         }}
       />
-      <span className={styles.userGreeting}>Hi, {currentUser.userName}</span>
+      <span className={styles.userGreeting}>Hi, {currentUser.userName}!</span>
       <div className={styles.userPanel_buttons}>
         <button className={styles.btnLogout} type="button" onClick={handleLogout}>
           Logout

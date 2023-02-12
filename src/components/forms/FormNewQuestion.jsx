@@ -14,14 +14,14 @@ const FormNewQuestion = () => {
   const validationSchema = Yup.object().shape({
     title: Yup.string()
       .min(2, "Title must be at least 2 characters long.")
-      .max(100, "Title must not exceed 30 characters.")
+      .max(150, "Title must not exceed 150 characters.")
       .required("Required field."),
     description: Yup.string()
       .min(20, "Description must be at least 5 characters long.")
-      .max(500, "Description must not exceed 500 characters.")
+      .max(1000, "Description must not exceed 500 characters.")
       .required("Required field."),
   });
-
+  //Suziureti formos validacijas - ar reikalavimai atitinka klaidu turini
   return (
     <>
       <div className="formNewQuestionWrapper">

@@ -15,7 +15,7 @@ const FormNewAnswer = () => {
   const validationSchema = Yup.object().shape({
     description: Yup.string()
       .min(2, "Description must be at least 2 characters long.")
-      .max(500, "Description must not exceed 500 characters.")
+      .max(1000, "Description must not exceed 500 characters.")
       .required("Required field."),
   });
 

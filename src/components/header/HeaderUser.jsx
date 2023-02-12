@@ -4,13 +4,12 @@ import LogoImage from "./LogoImage";
 
 const HeaderUser = () => {
   return (
-    <header
-      className="header"
-      style={{ display: "flex", gap: "0.5rem", justifyContent: "space-between" }}
-    >
-      <LogoImage />
-      <div className="userButtonContainer" style={{ display: "flex", gap: "0.5rem" }}>
-        <UserPanel />
+    <header className="header">
+      <div className="contentWrap_global">
+        <LogoImage />
+        <div className="userButtonContainer">
+          <UserPanel />
+        </div>
       </div>
     </header>
   );

@@ -3,6 +3,11 @@
 .answer {
   @include v.post-basic;
 
+  .answer__header {
+    display: flex;
+    justify-content: space-between;
+  }
+
   .answer__footer {
     display: flex;
     flex-direction: column;
