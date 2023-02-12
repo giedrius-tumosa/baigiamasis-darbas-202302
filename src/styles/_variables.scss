@@ -1,1 +1,52 @@
+// VARIABLES
 
+// Colors
+$color-100: #fff;
+$color-300: #d4d4d4;
+$color-400: #585858;
+$color-500: #90a2ff;
+$color-600: #546ffe;
+$color-650: #1940ff;
+
+$color-theme: $color-600;
+$color-theme-light: $color-500;
+
+// Fonts
+
+$font-color-bright: $color-400;
+$font-family-global: "Roboto", sans-serif;
+
+// Other
+
+$border-light: 1px solid $color-300;
+
+$box-shadow-light: 1px 1px 5px 1px $color-300;
+
+// Buttons
+
+$color-btn-opinion: #000000;
+$color-btn-like: #0000ff;
+$color-btn-dislike: #ff0000;
+
+// MIXINS
+
+@mixin text-small-additional {
+  font-size: 0.85rem;
+  font-style: italic;
+  color: $font-color-bright;
+}
+
+@mixin text-heading-mid {
+  font-size: 1.2rem;
+  color: $color-theme;
+}
+
+@mixin post-basic {
+  border-radius: 10px;
+  border: $border-light;
+  box-shadow: $box-shadow-light;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem;
+}

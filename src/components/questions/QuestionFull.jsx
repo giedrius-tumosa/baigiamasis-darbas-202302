@@ -5,38 +5,26 @@ import QuestionEditDeleteButtons from "./questionComponents/QuestionEditDeleteBu
 import QuestionContext from "../../store/QuestionContext";
 import { useContext } from "react";
 import FormEditQuestion from "../forms/FormEditQuestion";
+import styles from "./question.module.scss";
 // TODO: what if you dont get data for each item?
 
 const QuestionFull = ({ question }) => {
   const { editMode, setEditMode, deleteMode, setDeleteMode } = useContext(QuestionContext);
   return (
     //ka daryti su delete mode
-    <article
-      className="question-snip"
-      style={{
-        //TODO: remove inner styles
-        display: "flex",
-        gap: "1rem",
-        flexDirection: "column",
-        border: "1px solid grey",
-        padding: "0.5rem",
-      }}
-    >
-      <header
-        className="question-snip__header"
-        style={{ display: "flex", justifyContent: "space-between" }}
-      >
+    <article className={styles.question}>
+      <header className={styles.question__header}>
         <PostOwnerInfo ownerId={question.ownerId} />
         <TimeStamp postTimeStamp={question.postTimeStamp} editTimeStamp={question.editTimeStamp} />
       </header>
-      <main className="question-snip__main">
-        <div className="questionContentWrap">
-          <h3>{question.title}</h3>
-          <p>{question.description}</p>
+      <main className={styles.question__main}>
+        <div className={styles.questionContentWrap}>
+          <h3 className={styles.question_title_full}>{question.title}</h3>
+          <p className={styles.question_description}>{question.description}</p>
         </div>
       </main>
       <footer
-        className="question-snip__footer"
+        className={styles.question__footer}
         style={{ display: "flex", justifyContent: "space-between" }}
       >
         <QuestionStatistics question={question} />

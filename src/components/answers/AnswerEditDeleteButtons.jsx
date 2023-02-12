@@ -1,6 +1,8 @@
 import { useContext } from "react";
 import UserContext from "../../store/UserContext";
 import AnswerContext from "../../store/AnswerContext";
+import styles from "./answerEditDeleteButtons.module.scss";
+import { FaTrashAlt, FaEdit } from "react-icons/fa";
 
 const AnswerEditDeleteButtons = ({ answer, editMode, setEditMode }) => {
   const { deleteAnswer } = useContext(AnswerContext);
@@ -17,12 +19,12 @@ const AnswerEditDeleteButtons = ({ answer, editMode, setEditMode }) => {
   return (
     <>
       {currentUser.id === answer.ownerId && (
-        <div className="answerEditDeleteBtns" style={{ display: "flex", gap: "0.5rem" }}>
+        <div className={styles.answerEditDeleteBtns}>
           <button onClick={handleEdit} className="btnEdit" type="button" disabled={editMode}>
-            Edit
+            <FaEdit />
           </button>
           <button onClick={handleDelete} className="btnDelete" type="button">
-            Delete
+            <FaTrashAlt />
           </button>
         </div>
       )}

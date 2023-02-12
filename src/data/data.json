@@ -27,12 +27,14 @@
       "id": "0lVVN70fm8swETj3Px4zz",
       "ownerId": "O--aFz4IpGs9abNnLUDmW",
       "likedBy": [],
-      "dislikedBy": [],
+      "dislikedBy": [
+        "Gdqhqm_Og2ZZ08_qvnNAv"
+      ],
       "isEdited": false,
-      "editTimeStamp": "",
+      "editTimeStamp": "2023-02-12 09:28:41",
       "postTimeStamp": "2023-02-11 17:30:04",
       "title": "Xbox Series X or Nintendo Switch?",
-      "description": "Hey guys, I'm in a bit of a conundrum here in making a decision for myself. I'm looking for a game console I can play at work, and it's come down to the Xbox Series X and the Nintendo Switch. Honestly would have chosen the PS5 but they're like finding a unicorn or a needle in a haystack, so that's out of the question"
+      "description": "Hey guys, I'm in a bit of a conundrum here in making a decision for myself. I'm looking for a game console I can play at work, and it's come down to the Xbox Series X and the Nintendo Switch. Honestly would have chosen the PS5 but they're like finding a unicorn or a needle in a haystack, so that's out of the question."
     }
   ],
   "answers": [
@@ -50,7 +52,9 @@
       "id": "v5kxpaWTvWRaex_QH4ahk",
       "ownerId": "_RNFGVNnp8rDjtprPf8rX",
       "questionId": "0lVVN70fm8swETj3Px4zz",
-      "likedBy": [],
+      "likedBy": [
+        "Gdqhqm_Og2ZZ08_qvnNAv"
+      ],
       "dislikedBy": [],
       "editTimeStamp": "",
       "postTimeStamp": "2023-02-11 17:31:40",

@@ -1,6 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import UserContext from "../../store/UserContext";
 import FigureImage from "../global/FigureImage";
+import styles from "./postOwnerInfo.module.scss";
 
 const PostOwnerInfo = ({ ownerId }) => {
   const { users, loadingUsers } = useContext(UserContext);
@@ -17,12 +18,9 @@ const PostOwnerInfo = ({ ownerId }) => {
   return (
     <>
       {postOwner && (
-        <div
-          className="postOwnerInfo"
-          style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}
-        >
+        <div className={styles.postOwnerInfo}>
           <FigureImage
-            className="profileImgSmall"
+            className={styles.profileImgSmall}
             attributes={{
               width: 40,
               height: 40,
@@ -34,7 +32,7 @@ const PostOwnerInfo = ({ ownerId }) => {
         </div>
       )}
       {!postOwner && (
-        <div className="postOwnerInfo">
+        <div className={styles.postOwnerInfo}>
           <span>{`loading...`}</span>
         </div>
       )}

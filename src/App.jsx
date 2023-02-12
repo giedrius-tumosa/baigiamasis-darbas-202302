@@ -9,11 +9,14 @@ import RegistrationPage from "./components/pages/RegistrationPage";
 import HomeUser from "./components/pages/HomeUser";
 import UserOnlyContent from "./components/pages/UserOnlyContent";
 import NewQuestionPage from "./components/pages/NewQuestionPage";
+import QuestionContext from "./store/QuestionContext";
 
 function App() {
   const { getUsers, setCurrentUser, setUserLoggedin } = useContext(UserContext);
+  const { getQuestions } = useContext(QuestionContext);
 
   useEffect(() => {
+    getQuestions();
     getUsers();
   }, []);
 

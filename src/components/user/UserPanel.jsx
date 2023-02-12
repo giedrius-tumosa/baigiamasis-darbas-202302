@@ -1,7 +1,8 @@
-import { useContext, useEffect } from "react";
+import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import UserContext from "../../store/UserContext";
 import FigureImage from "../global/FigureImage";
+import styles from "./userPanel.module.scss";
 
 const UserPanel = () => {
   const { currentUser, setCurrentUser, userLoggedin, setUserLoggedin, deleteFromSessionStorage } =
@@ -16,9 +17,12 @@ const UserPanel = () => {
   };
 
   return (
-    <div className="userPanel" style={{ display: "flex", gap: "0.5rem", alignItems: "center" }}>
+    <div
+      className={styles.userPanel}
+      style={{ display: "flex", gap: "0.5rem", alignItems: "center" }}
+    >
       <FigureImage
-        className="profileImgSmall"
+        className={styles.profileImgSmall}
         attributes={{
           width: 40,
           height: 40,
@@ -26,9 +30,9 @@ const UserPanel = () => {
           alt: "User profile image.",
         }}
       />
-      <span className="userGreeting">Hi, {currentUser.userName}</span>
-      <div className="userPanel-buttons">
-        <button className="btnLogout" type="button" onClick={handleLogout}>
+      <span className={styles.userGreeting}>Hi, {currentUser.userName}</span>
+      <div className={styles.userPanel_buttons}>
+        <button className={styles.btnLogout} type="button" onClick={handleLogout}>
           Logout
         </button>
       </div>

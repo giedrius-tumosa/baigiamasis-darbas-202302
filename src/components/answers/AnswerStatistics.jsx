@@ -2,6 +2,8 @@ import { useContext, useEffect, useState } from "react";
 import UserContext from "../../store/UserContext";
 import QuestionContext from "../../store/QuestionContext";
 import AnswerContext from "../../store/AnswerContext";
+import { FaThumbsUp, FaThumbsDown } from "react-icons/fa";
+import styles from "./answerStatistics.module.scss";
 
 const AnswerStatistics = ({ answer }) => {
   const { currentUser } = useContext(UserContext);
@@ -58,28 +60,28 @@ const AnswerStatistics = ({ answer }) => {
 
   return (
     <>
-      <div className="answerStatistics" style={{ display: "flex", gap: "0.5rem" }}>
-        <div className="likeWrap">
+      <div className={styles.answerStatistics}>
+        <div className={styles.likeWrap}>
           <button
-            className={`${currentUserLiked ? "opinionBtn-marked" : "opinionBtn"}`}
+            className={`${currentUserLiked ? "opinionBtn-marked" : "opinionBtn"} likeBtn`}
             type="button"
             onClick={handleLike}
             disabled={answer.ownerId === currentUser.id}
           >
-            Like
+            <FaThumbsUp />
           </button>
           <span title="Number of likes" className="likeNumber">
             {answer.likedBy.length}
           </span>
         </div>
-        <div className="dislikeWrap">
+        <div className={styles.dislikeWrap}>
           <button
-            className={`${currentUserDisliked ? "opinionBtn-marked" : "opinionBtn"}`}
+            className={`${currentUserDisliked ? "opinionBtn-marked" : "opinionBtn"} dislikeBtn`}
             type="button"
             onClick={handleDislike}
             disabled={answer.ownerId === currentUser.id}
           >
-            Dislike
+            <FaThumbsDown />
           </button>
           <span title="Number of dislikes" className="dislikeNumber">
             {answer.dislikedBy.length}

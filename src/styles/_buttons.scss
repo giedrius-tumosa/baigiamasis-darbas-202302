@@ -1,0 +1,65 @@
+@use "./variables" as v;
+
+// Opinion buttons
+[class^="opinionBtn"] {
+  border: none;
+  background-color: #fff;
+  color: v.$color-btn-opinion;
+  font-size: 1.5rem;
+  cursor: pointer;
+
+  :active {
+    opacity: 0.8;
+  }
+
+  &:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+
+    :active {
+      opacity: unset;
+    }
+  }
+
+  &.likeBtn {
+    &.opinionBtn-marked {
+      color: v.$color-btn-like;
+    }
+  }
+
+  &.dislikeBtn {
+    transform: translateY(4px);
+    &.opinionBtn-marked {
+      color: v.$color-btn-dislike;
+    }
+  }
+
+  @media screen and (min-width: 481px) {
+    font-size: 1.2rem;
+  }
+}
+
+// Edit, Delete buttons
+.btnEdit,
+.btnDelete {
+  border: none;
+  background-color: #fff;
+  font-size: 1.5rem;
+  cursor: pointer;
+  line-height: 0;
+
+  @media screen and (min-width: 481px) {
+    font-size: 1.2rem;
+  }
+}
+
+.btnDelete {
+  :hover {
+    color: v.$color-btn-dislike;
+  }
+}
+.btnEdit {
+  :hover {
+    color: v.$color-btn-like;
+  }
+}

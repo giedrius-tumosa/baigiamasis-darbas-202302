@@ -50,7 +50,6 @@ const QuestionsList = () => {
   };
 
   useEffect(() => {
-    getQuestions();
     getAnswers();
   }, []);
 

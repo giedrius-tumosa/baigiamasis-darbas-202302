@@ -1,0 +1,9 @@
+@use "../../../styles/variables" as v;
+
+.postTimeStamp {
+  @include v.text-small-additional;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1ch;
+}

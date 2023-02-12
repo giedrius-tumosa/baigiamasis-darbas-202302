@@ -1,5 +1,6 @@
 import UserPanel from "../user/UserPanel";
 import FigureImage from "../global/FigureImage";
+import LogoImage from "./LogoImage";
 
 const HeaderUser = () => {
   return (
@@ -7,15 +8,7 @@ const HeaderUser = () => {
       className="header"
       style={{ display: "flex", gap: "0.5rem", justifyContent: "space-between" }}
     >
-      <FigureImage
-        className="logoImage"
-        attributes={{
-          src: "https://www.svgrepo.com/show/230797/question.svg",
-          width: 50,
-          height: "auto",
-          alt: "COmpany logo image.",
-        }}
-      />
+      <LogoImage />
       <div className="userButtonContainer" style={{ display: "flex", gap: "0.5rem" }}>
         <UserPanel />
       </div>

@@ -1,0 +1,19 @@
+@use "../../styles/variables" as v;
+
+.answerStatistics {
+  display: flex;
+  gap: 0.5rem;
+  font-size: 0.95rem;
+
+  .likeWrap,
+  .dislikeWrap {
+    display: flex;
+    gap: 0.5rem;
+  }
+  .likeWrap {
+    color: v.$color-btn-like;
+  }
+  .dislikeWrap {
+    color: v.$color-btn-dislike;
+  }
+}

@@ -1,0 +1,42 @@
+@use "../../styles/variables" as v;
+
+.question {
+  @include v.post-basic;
+  width: min(700px, 100%);
+
+  .question__header {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .questionContentWrap {
+    & :first-child {
+      margin-bottom: 1rem;
+    }
+    a {
+      text-decoration: underline;
+      @include v.text-heading-mid;
+      :hover {
+        color: v.$color-theme-light;
+      }
+    }
+
+    .question_title_full {
+      @include v.text-heading-mid;
+    }
+  }
+  .question__footer {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 1rem;
+
+    @media screen and (min-width: 481px) {
+      justify-content: space-between;
+      flex-direction: row;
+      align-items: center;
+    }
+  }
+}

@@ -1,7 +1,9 @@
-import { useContext, useEffect } from "react";
+import { useContext } from "react";
 import UserContext from "../../../store/UserContext";
 import QuestionContext from "../../../store/QuestionContext";
 import { useNavigate } from "react-router-dom";
+import { FaTrashAlt, FaEdit } from "react-icons/fa";
+import styles from "./questionEditDeleteButtons.module.scss";
 
 const QuestionEditDeleteButtons = ({ question = {} }) => {
   const { editMode, setEditMode, deleteQuestion, setDeleteMode } = useContext(QuestionContext);
@@ -21,12 +23,18 @@ const QuestionEditDeleteButtons = ({ question = {} }) => {
   return (
     <>
       {currentUser.id === question.ownerId && (
-        <div className="questionEditDeleteBtns" style={{ display: "flex", gap: "0.5rem" }}>
-          <button onClick={handleEdit} className="btnEdit" type="button" disabled={editMode}>
-            Edit
+        <div className={styles.questionEditDeleteBtns}>
+          <button
+            onClick={handleEdit}
+            className="btnEdit"
+            type="button"
+            disabled={editMode}
+            title="Edit"
+          >
+            <FaEdit />
           </button>
-          <button onClick={handleDelete} className="btnDelete" type="button">
-            Delete
+          <button onClick={handleDelete} className="btnDelete" type="button" title="Delete">
+            <FaTrashAlt />
           </button>
         </div>
       )}

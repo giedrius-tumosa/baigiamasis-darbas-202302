@@ -1,0 +1,18 @@
+@use "../../styles/variables" as v;
+
+.answer {
+  @include v.post-basic;
+
+  .answer__footer {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 1rem;
+
+    @media screen and (min-width: 481px) {
+      justify-content: space-between;
+      flex-direction: row;
+      align-items: center;
+    }
+  }
+}
