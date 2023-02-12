@@ -51,13 +51,15 @@ const FormEditAnswer = ({ answer, editMode, setEditMode }) => {
                 </ErrorMessage>
               </div>
               {/* TODO: pameginti isSubmitting, kai true - disable submit button */}
-              <div className="buttonSubmitWrap">
-                <button type="submit">Save</button>
-              </div>
-              <div className="buttonCanceltWrap">
-                <button type="button" onClick={handleCancel}>
-                  Cancel
-                </button>
+              <div className="formEditQuestionBtns">
+                <div className="buttonSubmitWrap">
+                  <button type="submit">Save</button>
+                </div>
+                <div className="buttonCanceltWrap">
+                  <button type="button" onClick={handleCancel}>
+                    Cancel
+                  </button>
+                </div>
               </div>
             </Form>
           )}

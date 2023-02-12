@@ -20,6 +20,13 @@
       "userProfileImgUrl": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8N3x8cHJvZmlsZSUyMHBpY3R1cmV8ZW58MHx8MHx8&auto=format&fit=crop&w=1400&q=60",
       "userEmail": "susan@gmail.com",
       "userPassword": "labas2020"
+    },
+    {
+      "id": "PfX283I2KqG-1O5cYSH7G",
+      "userName": "Lisa",
+      "userProfileImgUrl": "https://images.unsplash.com/photo-1619895862022-09114b41f16f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8cHJvZmlsZSUyMHBpY3R1cmV8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60",
+      "userEmail": "lisa@gmail.com",
+      "userPassword": "labas2020"
     }
   ],
   "questions": [
@@ -42,7 +49,9 @@
       "likedBy": [
         "O--aFz4IpGs9abNnLUDmW"
       ],
-      "dislikedBy": [],
+      "dislikedBy": [
+        "PfX283I2KqG-1O5cYSH7G"
+      ],
       "isEdited": false,
       "editTimeStamp": "",
       "postTimeStamp": "2023-02-12 12:50:28",
@@ -72,6 +81,17 @@
       "postTimeStamp": "2023-02-12 12:57:52",
       "title": "Console gaming is hardly different from PC gaming, and much of what people say about PC gaming to put it above console gaming is often wrong.",
       "description": "There are many misconceptions being thrown about PC gaming vs Console gaming, that I believe need to be addressed. This isn’t about “PC gamers being wrong,” or “consoles being the best,” absolutely not. I just want to cut through some of the stuff people use to put down console gaming, and show that console gaming is incredibly similar to PC gaming. I mean, yes, this is someone who mainly games on console, but I also am getting a new PC that I will game on as well, not to mention the 30 PC games I already own and play. I’m not particularly partial to one over the other."
+    },
+    {
+      "id": "w1V3YQ8UuSAscNQ0FSoOK",
+      "ownerId": "PfX283I2KqG-1O5cYSH7G",
+      "likedBy": [],
+      "dislikedBy": [],
+      "isEdited": false,
+      "editTimeStamp": "2023-02-12 16:55:26",
+      "postTimeStamp": "2023-02-12 16:54:01",
+      "title": "The Xbox One: How Microsoft cost themselves an entire console generation with one bad announcement",
+      "description": "Console wars have always been a part of video games, going all the way back to the 90s with the feud between Sega and Nintendo. It makes sense from a tribalism perspective; consoles are hefty purchases so you need to be able to feel secure that you bought the right one, especially if you're a child as you may not have the funds to secure the competition unless your parents were exceedingly generous. Today's post focuses on one such entry into the console war."
     }
   ],
   "answers": [
@@ -92,7 +112,9 @@
       "likedBy": [
         "Gdqhqm_Og2ZZ08_qvnNAv"
       ],
-      "dislikedBy": [],
+      "dislikedBy": [
+        "PfX283I2KqG-1O5cYSH7G"
+      ],
       "editTimeStamp": "",
       "postTimeStamp": "2023-02-11 17:31:40",
       "description": "I've seen a lot of people suggest Steam Deck on this sub for various reasons. It's a great piece of hardware for sure, but if you put in an order now you're likely waiting at least several months if not more than a year, and I suspect most people asking these questions are wondering what's their best option now, not a year from now."
@@ -106,6 +128,16 @@
       "editTimeStamp": "",
       "postTimeStamp": "2023-02-12 15:40:32",
       "description": "I totally disagree with your opinion."
+    },
+    {
+      "id": "qMn-MAohCEP9j0X46qPwF",
+      "ownerId": "PfX283I2KqG-1O5cYSH7G",
+      "questionId": "ifkj9JjRejqwM_bU4IKIN",
+      "likedBy": [],
+      "dislikedBy": [],
+      "editTimeStamp": "",
+      "postTimeStamp": "2023-02-12 16:56:04",
+      "description": "I think you are correct."
     }
   ]
 }

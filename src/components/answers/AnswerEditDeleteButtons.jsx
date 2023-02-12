@@ -20,7 +20,12 @@ const AnswerEditDeleteButtons = ({ answer, editMode, setEditMode }) => {
     <>
       {currentUser.id === answer.ownerId && (
         <div className={styles.answerEditDeleteBtns}>
-          <button onClick={handleEdit} className="btnEdit" type="button" disabled={editMode}>
+          <button
+            onClick={handleEdit}
+            className={editMode ? "btnEdit_disabled" : "btnEdit"}
+            type="button"
+            disabled={editMode}
+          >
             <FaEdit />
           </button>
           <button onClick={handleDelete} className="btnDelete" type="button">

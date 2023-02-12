@@ -7,7 +7,6 @@ import AnswerContext from "../../store/AnswerContext";
 import { useContext, useEffect, useState } from "react";
 import FormEditAnswer from "../forms/FormEditAnswer";
 import styles from "./answer.module.scss";
-// TODO: what if you dont get data for each item?
 
 const AnswerFull = ({ answer }) => {
   // const { editMode, setEditMode } = useContext(AnswerContext);
@@ -30,7 +29,11 @@ const AnswerFull = ({ answer }) => {
         <AnswerStatistics answer={answer} />
         <AnswerEditDeleteButtons answer={answer} editMode={editMode} setEditMode={setEditMode} />
       </footer>
-      {editMode && <FormEditAnswer answer={answer} editMode={editMode} setEditMode={setEditMode} />}
+      <div className="formSection formEditAnswer">
+        {editMode && (
+          <FormEditAnswer answer={answer} editMode={editMode} setEditMode={setEditMode} />
+        )}
+      </div>
     </article>
   );
 };

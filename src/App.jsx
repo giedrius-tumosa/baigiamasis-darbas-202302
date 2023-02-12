@@ -12,15 +12,13 @@ import NewQuestionPage from "./components/pages/NewQuestionPage";
 import QuestionContext from "./store/QuestionContext";
 
 function App() {
-  const { getUsers, setCurrentUser, setUserLoggedin } = useContext(UserContext);
+  const { getUsers } = useContext(UserContext);
   const { getQuestions } = useContext(QuestionContext);
 
   useEffect(() => {
     getQuestions();
     getUsers();
   }, []);
-
-  //TODO: kur padeti getUsers? logine?
 
   return (
     <>

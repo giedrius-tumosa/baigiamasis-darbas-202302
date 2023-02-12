@@ -60,13 +60,15 @@ const FormNewQuestion = ({ question }) => {
                   {(message) => <div className="formErrorMessage">{message}</div>}
                 </ErrorMessage>
               </div>
-              <div className="buttonSubmitWrap">
-                <button type="submit">Save</button>
-              </div>
-              <div className="buttonCanceltWrap">
-                <button type="button" onClick={handleCancel}>
-                  Cancel
-                </button>
+              <div className="formEditQuestionBtns">
+                <div className="buttonSubmitWrap">
+                  <button type="submit">Save</button>
+                </div>
+                <div className="buttonCanceltWrap">
+                  <button type="button" onClick={handleCancel}>
+                    Cancel
+                  </button>
+                </div>
               </div>
             </Form>
           )}

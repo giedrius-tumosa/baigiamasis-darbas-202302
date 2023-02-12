@@ -6,12 +6,10 @@ import QuestionContext from "../../store/QuestionContext";
 import { useContext } from "react";
 import FormEditQuestion from "../forms/FormEditQuestion";
 import styles from "./question.module.scss";
-// TODO: what if you dont get data for each item?
 
 const QuestionFull = ({ question }) => {
-  const { editMode, setEditMode, deleteMode, setDeleteMode } = useContext(QuestionContext);
+  const { editMode } = useContext(QuestionContext);
   return (
-    //ka daryti su delete mode
     <article className={styles.question}>
       <header className={styles.question__header}>
         <PostOwnerInfo ownerId={question.ownerId} />
@@ -27,7 +25,9 @@ const QuestionFull = ({ question }) => {
         <QuestionStatistics question={question} />
         <QuestionEditDeleteButtons question={question} />
       </footer>
-      {editMode && <FormEditQuestion question={question} />}
+      <div className="formSection formEditQuestion">
+        {editMode && <FormEditQuestion question={question} />}
+      </div>
     </article>
   );
 };

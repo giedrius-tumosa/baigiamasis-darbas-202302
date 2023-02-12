@@ -8,7 +8,7 @@
 
 body {
   padding-inline: 1rem;
-  padding-block: 0.5rem;
+  padding-bottom: 1rem;
 }
 
 input,
@@ -17,8 +17,9 @@ textarea {
   padding: 2px 5px;
 }
 
-.formErrorMessage {
-  color: red;
+.formErrorMessage,
+.errorMessage {
+  color: #ff0000;
 }
 
 #root > * {
@@ -42,6 +43,10 @@ textarea {
 .contentWrap_global {
   width: min(1200px, 100%);
   margin: 0 auto;
+}
+
+.questionSetWrap {
+  padding-top: 1rem;
 }
 
 @media screen and (min-width: 780px) {

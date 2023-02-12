@@ -7,14 +7,7 @@ import styles from "./formLogin.module.scss";
 
 const FormLogin = () => {
   const [loginError, setLoginError] = useState("");
-  const {
-    users,
-    setCurrentUser,
-    userLoggedin,
-    setUserLoggedin,
-    currentUser,
-    saveToSessionStorage,
-  } = useContext(UserContext);
+  const { users, setCurrentUser, setUserLoggedin, saveToSessionStorage } = useContext(UserContext);
   const navigate = useNavigate();
 
   const validationSchema = Yup.object().shape({

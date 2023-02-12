@@ -2,7 +2,6 @@
 
 .formSection {
   width: min(500px, 100%);
-  padding: 1rem;
   margin: 0 auto;
 
   form {
@@ -35,9 +34,29 @@
 
 .formNewAnswerSection {
   margin: unset;
+  margin-top: 1.5rem;
   width: 100%;
 
   .descriptionWrap textarea {
     width: 100%;
+  }
+}
+
+.formEditQuestion {
+  margin: unset;
+
+  .formEditQuestionWrapper {
+    .formEditQuestionBtns {
+      display: flex;
+      gap: 0.5rem;
+    }
+  }
+}
+
+.formEditAnswer {
+  margin: unset;
+  .formEditQuestionBtns {
+    display: flex;
+    gap: 0.5rem;
   }
 }

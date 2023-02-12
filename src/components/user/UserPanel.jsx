@@ -1,12 +1,14 @@
 import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import UserContext from "../../store/UserContext";
+import QuestionContext from "../../store/QuestionContext";
 import FigureImage from "../global/FigureImage";
 import styles from "./userPanel.module.scss";
 
 const UserPanel = () => {
-  const { currentUser, setCurrentUser, userLoggedin, setUserLoggedin, deleteFromSessionStorage } =
+  const { currentUser, setCurrentUser, setUserLoggedin, deleteFromSessionStorage } =
     useContext(UserContext);
+  const { setQuestionFetchErrors } = useContext(QuestionContext);
   const navigate = useNavigate();
   // TODO: kas bus jeigu prisijunges useris suves kito userio id i url? ka rodys? ar nereikia protektinti sito
   const handleLogout = () => {

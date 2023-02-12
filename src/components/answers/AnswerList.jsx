@@ -5,12 +5,13 @@ import AnswerFull from "./AnswerFull";
 import styles from "./answerList.module.scss";
 
 const AnswerList = ({ questionId }) => {
-  const { answers, loadingAnswers } = useContext(AnswerContext);
+  const { answers, loadingAnswers, answerFetchErrors } = useContext(AnswerContext);
 
   return (
     <>
       <section className={styles.answerList}>
         <p>{loadingAnswers && "Loading..."}</p>
+        <p className="errorMessage">{answerFetchErrors.getErr}</p>
         {!loadingAnswers &&
           answers.map(
             (answer) =>

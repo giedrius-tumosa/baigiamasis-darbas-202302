@@ -7,7 +7,8 @@ import UserContext from "../../store/UserContext";
 import styles from "./questionList.module.scss";
 
 const QuestionsList = () => {
-  const { questions, loadingQuestions, getQuestions, questionSort } = useContext(QuestionContext);
+  const { questions, loadingQuestions, questionSort, questionFetchErrors } =
+    useContext(QuestionContext);
   const { answers, getAnswers } = useContext(AnswerContext);
   const { userLoggedin } = useContext(UserContext);
   const navigate = useNavigate();
@@ -68,6 +69,9 @@ const QuestionsList = () => {
           )}
         </div>
         <p>{loadingQuestions && "Loading..."}</p>
+        <p className="errorMessage">
+          {questionFetchErrors.getErr} {questionFetchErrors.postErr} {questionFetchErrors.deleteErr}
+        </p>
         {!loadingQuestions &&
           (questionSort === "" || questionSort === "oldestFirst") &&
           questions.map((question) => <QuestionSnippet key={question.id} question={question} />)}

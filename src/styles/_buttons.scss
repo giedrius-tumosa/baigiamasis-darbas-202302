@@ -63,3 +63,14 @@
     color: v.$color-btn-like;
   }
 }
+.btnEdit_disabled {
+  cursor: not-allowed;
+  border: none;
+  background-color: #fff;
+  font-size: 1.5rem;
+  line-height: 0;
+
+  @media screen and (min-width: 481px) {
+    font-size: 1.2rem;
+  }
+}
