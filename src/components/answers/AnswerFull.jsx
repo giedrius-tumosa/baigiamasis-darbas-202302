@@ -2,18 +2,14 @@ import PostOwnerInfo from "../user/PostOwnerInfo";
 import AnswerStatistics from "./AnswerStatistics";
 import TimeStamp from "../questions/questionComponents/TimeStamp";
 import AnswerEditDeleteButtons from "./AnswerEditDeleteButtons";
-import QuestionContext from "../../store/QuestionContext";
-import AnswerContext from "../../store/AnswerContext";
-import { useContext, useEffect, useState } from "react";
+import { useState } from "react";
 import FormEditAnswer from "../forms/FormEditAnswer";
 import styles from "./answer.module.scss";
 
 const AnswerFull = ({ answer }) => {
-  // const { editMode, setEditMode } = useContext(AnswerContext);
   const [editMode, setEditMode] = useState(false);
 
   return (
-    //TODO: ka daryti su delete mode
     <article className={styles.answer}>
       <header className={styles.answer__header}>
         <PostOwnerInfo ownerId={answer.ownerId} />

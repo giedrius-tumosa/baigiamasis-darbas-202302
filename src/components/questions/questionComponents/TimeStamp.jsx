@@ -10,5 +10,4 @@ const TimeStamp = ({ postTimeStamp, editTimeStamp }) => {
     </>
   );
 };
-// Ar reikia is viso isEdited json faile?
 export default TimeStamp;

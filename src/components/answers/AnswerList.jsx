@@ -1,5 +1,4 @@
-import { useContext, useEffect } from "react";
-import QuestionContext from "../../store/QuestionContext";
+import { useContext } from "react";
 import AnswerContext from "../../store/AnswerContext";
 import AnswerFull from "./AnswerFull";
 import styles from "./answerList.module.scss";

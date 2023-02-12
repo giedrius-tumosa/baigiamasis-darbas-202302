@@ -14,8 +14,7 @@ const FormLogin = () => {
     userName: Yup.string().required("User name required."),
     userPassword: Yup.string().required("Password required."),
   });
-  // TODO: ar reikia issubmitting
-  //  TODO: ar perdaryt su localstorage
+
   return (
     <>
       <Formik

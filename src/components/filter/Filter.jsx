@@ -1,4 +1,4 @@
-import { useContext, useEffect } from "react";
+import { useContext } from "react";
 import QuestionContext from "../../store/QuestionContext";
 import styles from "./filter.module.scss";
 

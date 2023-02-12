@@ -1,6 +1,5 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext, useState } from "react";
 import UserContext from "../../store/UserContext";
-import QuestionContext from "../../store/QuestionContext";
 import AnswerContext from "../../store/AnswerContext";
 import { FaThumbsUp, FaThumbsDown } from "react-icons/fa";
 import styles from "./answerStatistics.module.scss";

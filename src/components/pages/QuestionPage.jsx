@@ -16,5 +16,5 @@ const QuestionPage = () => {
     </>
   );
 };
-// TODO: Back button
+
 export default QuestionPage;

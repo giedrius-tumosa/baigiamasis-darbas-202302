@@ -7,8 +7,6 @@ import QuestionContext from "../../store/QuestionContext";
 import { useContext } from "react";
 import styles from "./question.module.scss";
 
-// TODO: what if you dont get data for each item?
-
 const QuestionSnippet = ({ question }) => {
   const { filterWithAnswers } = useContext(QuestionContext);
   const { answers } = useContext(AnswerContext);

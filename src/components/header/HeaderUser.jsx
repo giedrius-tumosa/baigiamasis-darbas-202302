@@ -1,5 +1,4 @@
 import UserPanel from "../user/UserPanel";
-import FigureImage from "../global/FigureImage";
 import LogoImage from "./LogoImage";
 
 const HeaderUser = () => {

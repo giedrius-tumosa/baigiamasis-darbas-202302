@@ -34,10 +34,7 @@
       "id": "0lVVN70fm8swETj3Px4zz",
       "ownerId": "O--aFz4IpGs9abNnLUDmW",
       "likedBy": [],
-      "dislikedBy": [
-        "Gdqhqm_Og2ZZ08_qvnNAv"
-      ],
-      "isEdited": false,
+      "dislikedBy": ["Gdqhqm_Og2ZZ08_qvnNAv"],
       "editTimeStamp": "2023-02-12 09:28:41",
       "postTimeStamp": "2023-02-11 17:30:04",
       "title": "Xbox Series X or Nintendo Switch?",
@@ -46,13 +43,8 @@
     {
       "id": "zTqBgatV7SXfESp8IN2hW",
       "ownerId": "_RNFGVNnp8rDjtprPf8rX",
-      "likedBy": [
-        "O--aFz4IpGs9abNnLUDmW"
-      ],
-      "dislikedBy": [
-        "PfX283I2KqG-1O5cYSH7G"
-      ],
-      "isEdited": false,
+      "likedBy": ["O--aFz4IpGs9abNnLUDmW"],
+      "dislikedBy": ["PfX283I2KqG-1O5cYSH7G"],
       "editTimeStamp": "",
       "postTimeStamp": "2023-02-12 12:50:28",
       "title": "Proposed extension of PlayStation 5 & Xbox Series X \"6 month rule\"",
@@ -61,11 +53,8 @@
     {
       "id": "FLayDd4CRTO24QKfCyuzN",
       "ownerId": "Gdqhqm_Og2ZZ08_qvnNAv",
-      "likedBy": [
-        "O--aFz4IpGs9abNnLUDmW"
-      ],
+      "likedBy": ["O--aFz4IpGs9abNnLUDmW"],
       "dislikedBy": [],
-      "isEdited": false,
       "editTimeStamp": "",
       "postTimeStamp": "2023-02-12 12:53:14",
       "title": "Why are console gaming ecosystems either happy (Nintendo) or high performance (PS5, xbox)?",
@@ -76,7 +65,6 @@
       "ownerId": "O--aFz4IpGs9abNnLUDmW",
       "likedBy": [],
       "dislikedBy": [],
-      "isEdited": false,
       "editTimeStamp": "",
       "postTimeStamp": "2023-02-12 12:57:52",
       "title": "Console gaming is hardly different from PC gaming, and much of what people say about PC gaming to put it above console gaming is often wrong.",
@@ -87,7 +75,6 @@
       "ownerId": "PfX283I2KqG-1O5cYSH7G",
       "likedBy": [],
       "dislikedBy": [],
-      "isEdited": false,
       "editTimeStamp": "2023-02-12 16:55:26",
       "postTimeStamp": "2023-02-12 16:54:01",
       "title": "The Xbox One: How Microsoft cost themselves an entire console generation with one bad announcement",
@@ -109,12 +96,8 @@
       "id": "v5kxpaWTvWRaex_QH4ahk",
       "ownerId": "_RNFGVNnp8rDjtprPf8rX",
       "questionId": "0lVVN70fm8swETj3Px4zz",
-      "likedBy": [
-        "Gdqhqm_Og2ZZ08_qvnNAv"
-      ],
-      "dislikedBy": [
-        "PfX283I2KqG-1O5cYSH7G"
-      ],
+      "likedBy": ["Gdqhqm_Og2ZZ08_qvnNAv"],
+      "dislikedBy": ["PfX283I2KqG-1O5cYSH7G"],
       "editTimeStamp": "",
       "postTimeStamp": "2023-02-11 17:31:40",
       "description": "I've seen a lot of people suggest Steam Deck on this sub for various reasons. It's a great piece of hardware for sure, but if you put in an order now you're likely waiting at least several months if not more than a year, and I suspect most people asking these questions are wondering what's their best option now, not a year from now."

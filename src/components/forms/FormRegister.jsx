@@ -11,13 +11,13 @@ const FormRegister = () => {
   const navigate = useNavigate();
 
   // Context
-  const { users, postUser, setUserLoggedin, setCurrentUser, currentUser } = useContext(UserContext);
+  const { users, postUser, setUserLoggedin, setCurrentUser } = useContext(UserContext);
 
   // Functions
   const validationSchema = Yup.object().shape({
     userName: Yup.string()
       .min(2, "User name must be at least 2 characters long.")
-      .max(16, "User name must not exceed 15 characters.")
+      .max(16, "User name must not exceed 16 characters.")
       .required("Required field."),
     userProfileImgUrl: Yup.string().url("Not URL format.").required("Required field."),
     userEmail: Yup.string().email("Not email format.").required("Required field."),

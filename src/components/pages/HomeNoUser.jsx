@@ -32,7 +32,6 @@ const HomeNoUser = () => {
           <QuestionList />
         </main>
       </div>
-      {/* //TODO: do i need footer */}
     </>
   );
 };
