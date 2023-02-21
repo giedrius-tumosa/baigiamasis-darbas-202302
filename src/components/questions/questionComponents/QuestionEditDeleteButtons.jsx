@@ -26,7 +26,7 @@ const QuestionEditDeleteButtons = ({ question = {} }) => {
         <div className={styles.questionEditDeleteBtns}>
           <button
             onClick={handleEdit}
-            className="btnEdit"
+            className={editMode ? "btnEdit_disabled" : "btnEdit"}
             type="button"
             disabled={editMode}
             title="Edit"

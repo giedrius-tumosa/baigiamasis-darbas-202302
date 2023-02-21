@@ -25,10 +25,11 @@ const AnswerEditDeleteButtons = ({ answer, editMode, setEditMode }) => {
             className={editMode ? "btnEdit_disabled" : "btnEdit"}
             type="button"
             disabled={editMode}
+            title="Edit"
           >
             <FaEdit />
           </button>
-          <button onClick={handleDelete} className="btnDelete" type="button">
+          <button onClick={handleDelete} className="btnDelete" type="button" title="Delete">
             <FaTrashAlt />
           </button>
         </div>
