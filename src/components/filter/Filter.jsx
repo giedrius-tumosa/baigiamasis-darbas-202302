@@ -3,20 +3,37 @@ import QuestionContext from "../../store/QuestionContext";
 import styles from "./filter.module.scss";
 
 const Filter = () => {
-  const { questionSort, setQuestionSort, filterWithAnswers, setFilterWithAnswers } =
-    useContext(QuestionContext);
+  const {
+    questionSort,
+    setQuestionSort,
+    filterWithAnswers,
+    setFilterWithAnswers,
+    setFilterNoAnswers,
+    filterNoAnswers,
+  } = useContext(QuestionContext);
 
   return (
     <>
       <div className={styles.filterWrap}>
         <h2>Sort questions:</h2>
-        <div className={styles.filterWithAnswers}>
+        <div className={styles.filter}>
           <label htmlFor="filterWithAnswers">With answers only:</label>
           <input
             type="checkbox"
             name="filterWithAnswers"
             id="filterWithAnswers"
+            disabled={filterNoAnswers}
             onChange={() => setFilterWithAnswers(!filterWithAnswers)}
+          />
+        </div>
+        <div className={styles.filter}>
+          <label htmlFor="filterNoAnswers">No answers only:</label>
+          <input
+            type="checkbox"
+            name="filterNoAnswers"
+            id="filterNoAnswers"
+            disabled={filterWithAnswers}
+            onChange={() => setFilterNoAnswers(!filterNoAnswers)}
           />
         </div>
         <div className={styles.buttonWrapper}>

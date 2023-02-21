@@ -8,12 +8,15 @@ import { useContext } from "react";
 import styles from "./question.module.scss";
 
 const QuestionSnippet = ({ question }) => {
-  const { filterWithAnswers } = useContext(QuestionContext);
+  const { filterWithAnswers, filterNoAnswers } = useContext(QuestionContext);
   const { answers } = useContext(AnswerContext);
 
   return (
     !(
       filterWithAnswers && answers.filter((answ) => answ.questionId === question.id).length === 0
+    ) &&
+    !(
+      filterNoAnswers && answers.filter((answ) => answ.questionId === question.id).length !== 0
     ) && (
       <article className={styles.question}>
         <header className={styles.question__header}>

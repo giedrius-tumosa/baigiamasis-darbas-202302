@@ -1,0 +1,11 @@
+@use "../../styles/variables" as v;
+
+.backbutton {
+  @include v.post-basic;
+  cursor: pointer;
+  background-color: #fff;
+
+  &:hover {
+    background-color: #f5f5f5;
+  }
+}

@@ -5,6 +5,7 @@ import QuestionContext from "../../store/QuestionContext";
 import { useContext } from "react";
 import UserContext from "../../store/UserContext";
 import { useNavigate } from "react-router-dom";
+import BackButton from "../global/BackButton";
 
 const FormNewQuestion = () => {
   const { currentUser } = useContext(UserContext);
@@ -64,8 +65,13 @@ const FormNewQuestion = () => {
                   {(message) => <div className="formErrorMessage">{message}</div>}
                 </ErrorMessage>
               </div>
-              <div className="buttonSubmitWrap">
-                <button type="submit">Post</button>
+              <div className="formButtons">
+                <div className="buttonSubmitWrap">
+                  <button type="submit">Post</button>
+                </div>
+                <div className="buttonCancelWrap">
+                  <BackButton textContent={"Cancel"} goTo={"/"} />
+                </div>
               </div>
             </Form>
           )}

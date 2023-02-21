@@ -3,6 +3,7 @@
 .formSection {
   width: min(500px, 100%);
   margin: 0 auto;
+  padding-top: 1rem;
 
   form {
     margin-top: 1rem;
@@ -28,6 +29,11 @@
       &:hover {
         background-color: #f5f5f5;
       }
+    }
+
+    .formButtons {
+      display: flex;
+      gap: 1rem;
     }
   }
 }

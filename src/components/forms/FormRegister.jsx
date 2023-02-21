@@ -4,6 +4,7 @@ import { nanoid } from "nanoid";
 import { useState, useContext } from "react";
 import UserContext from "../../store/UserContext";
 import { useNavigate } from "react-router-dom";
+import BackButton from "../global/BackButton";
 
 const FormRegister = () => {
   // States
@@ -112,10 +113,15 @@ const FormRegister = () => {
                   {(message) => <div className="formErrorMessage">{message}</div>}
                 </ErrorMessage>
               </div>
-              <div className="buttonSubmitWrap">
-                <button type="submit" disabled={isSubmitting}>
-                  Register
-                </button>
+              <div className="formButtons">
+                <div className="buttonSubmitWrap">
+                  <button type="submit" disabled={isSubmitting}>
+                    Register
+                  </button>
+                </div>
+                <div className="buttonCancelWrap">
+                  <BackButton textContent={"Cancel"} goTo={"/"} />
+                </div>
               </div>
               <div className="formErrorMessage">
                 <p>{formError}</p>
